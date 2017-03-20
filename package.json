@@ -1,0 +1,34 @@
+{
+  "name": "tijapi",
+  "version": "0.0.1",
+  "description": "Tiny ImageJ API in JavaScript",
+  "main": "tijapi.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crazybiocomputing/tijapi.git"
+  },
+  "keywords": [
+    "html5",
+    "css3",
+    "javascript",
+    "ImageJ",
+    "university bordeaux",
+    "webgl"
+  ],
+  "author": "Jean-Christophe Taveau",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/crazybiocomputing/tijapi/issues"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "jsdoc": "^3.4.3",
+    "jsdom": "^9.11.0"
+  }
+}
