@@ -1,4 +1,35 @@
+
+var header = [
+'/*',
+' *  tijapi: Tiny ImageJ API in JavaScript',
+' *  Copyright (C) 2017  Jean-Christophe Taveau.',
+' *',
+' *  This file is part of tijapi',
+' *',
+' * This program is free software: you can redistribute it and/or modify it',
+' * under the terms of the GNU General Public License as published by',
+' * the Free Software Foundation, either version 3 of the License, or',
+' * (at your option) any later version.',
+' *',
+' * This program is distributed in the hope that it will be useful,',
+' * but WITHOUT ANY WARRANTY; without even the implied warranty of',
+' * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the',
+' * GNU General Public License for more details.',
+' *',
+' *  You should have received a copy of the GNU General Public License',
+' *  along with mowgli.  If not, see <http://www.gnu.org/licenses/>.',
+' *',
+' *',
+' * Authors:',
+' * Jean-Christophe Taveau',
+' */'
+];
+ 
+
+
+
 /**
+ * Automatic Extraction of class names from ImageJ API v1.51i
  * find . | grep html | grep -v package | grep -v class\-use | grep '[A-Z]' | awk '{printf "{\"url\":\"%s\",\"process\":0},\n",$0;}' - 
  *
  * process: status of the class
@@ -8,7 +39,6 @@
  */
  
 var ijclasses = [
-[
   {
     "process": 0, 
     "url": "./api/ij/util/StringSorter.html"
@@ -74,7 +104,7 @@ var ijclasses = [
     "url": "./api/ij/ImageListener.html"
   }, 
   {
-    "process": 0, 
+    "process": 1, 
     "url": "./api/ij/IJ.html"
   }, 
   {
@@ -90,7 +120,7 @@ var ijclasses = [
     "url": "./api/ij/LookUpTable.html"
   }, 
   {
-    "process": 0, 
+    "process": 1, 
     "url": "./api/ij/ImagePlus.html"
   }, 
   {
@@ -202,7 +232,7 @@ var ijclasses = [
     "url": "./api/ij/process/ShortStatistics.html"
   }, 
   {
-    "process": 0, 
+    "process": 1, 
     "url": "./api/ij/process/ImageProcessor.html"
   }, 
   {
@@ -1336,6 +1366,7 @@ var ijclasses = [
 ];
 
 exports.ijclasses = ijclasses;
+exports.license = header.join('\n');
 
 
 /* End of classes */

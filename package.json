@@ -22,13 +22,19 @@
     "webgl"
   ],
   "author": "Jean-Christophe Taveau",
-  "license": "GPLv3",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/crazybiocomputing/tijapi/issues"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.2.0",
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-traceur": "^0.5.5",
     "jsdoc": "^3.4.3",
-    "jsdom": "^9.11.0"
+    "jsdom": "^9.11.0",
+    "traceur": "0.0.111"
   }
 }
