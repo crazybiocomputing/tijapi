@@ -37,139 +37,152 @@ implements java.awt.image.ImageObserver, Measurements, java.lang.Cloneable
 
 /**
  * Constructs an uninitialized ImagePlus.
+ * @constructor
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 
 function ImagePlus() {
     throw new NotImplementedException("ImagePlus.ImagePlus(..)");
-}
+};
 
 /**
  * Constructs an ImagePlus from an Image or BufferedImage. The first 
  * argument will be used as the title of the window that displays the image.
  * Throws an IllegalStateException if an error occurs while loading the image.
+ * @constructor
  * 
- * @params title - java.lang.String
- * @params img - java.awt.Image
+ * @param {java.lang.String} title - 
+ * @param {java.awt.Image} img - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 
 function ImagePlus(title, img) {
     throw new NotImplementedException("ImagePlus.ImagePlus(..)");
-}
+};
 
 /**
  * Constructs an ImagePlus from an ImageProcessor.
+ * @constructor
  * 
- * @params title - java.lang.String
- * @params ip - ImageProcessor
+ * @param {java.lang.String} title - 
+ * @param {ImageProcessor} ip - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 
 function ImagePlus(title, ip) {
     throw new NotImplementedException("ImagePlus.ImagePlus(..)");
-}
+};
 
 /**
  * Constructs an ImagePlus from a TIFF, BMP, DICOM, FITS,
  * PGM, GIF or JPRG specified by a path or from a TIFF, DICOM,
  * GIF or JPEG specified by a URL.
+ * @constructor
  * 
- * @params pathOrURL - java.lang.String
+ * @param {java.lang.String} pathOrURL - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 
 function ImagePlus(pathOrURL) {
     throw new NotImplementedException("ImagePlus.ImagePlus(..)");
-}
+};
 
 /**
  * Constructs an ImagePlus from a stack.
+ * @constructor
  * 
- * @params title - java.lang.String
- * @params stack - ImageStack
+ * @param {java.lang.String} title - 
+ * @param {ImageStack} stack - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 
 function ImagePlus(title, stack) {
     throw new NotImplementedException("ImagePlus.ImagePlus(..)");
-}
+};
 
 /**
  * 8-bit grayscale (unsigned)
  * 
- * @return int
+ * @const {int}
+ * @default
  * 
- * @author
+ * @author Created by ijdoc2js
  */
-const ImagePlus.GRAY8 = 0;
+ImagePlus.GRAY8 = 0;
 
 /**
  * 16-bit grayscale (unsigned)
  * 
- * @return int
+ * @const {int}
+ * @default
  * 
- * @author
+ * @author Created by ijdoc2js
  */
-const ImagePlus.GRAY16 = 0;
+ImagePlus.GRAY16 = 0;
 
 /**
  * 32-bit floating-point grayscale
  * 
- * @return int
+ * @const {int}
+ * @default
  * 
- * @author
+ * @author Created by ijdoc2js
  */
-const ImagePlus.GRAY32 = 0;
+ImagePlus.GRAY32 = 0;
 
 /**
  * 8-bit indexed color
  * 
- * @return int
+ * @const {int}
+ * @default
  * 
- * @author
+ * @author Created by ijdoc2js
  */
-const ImagePlus.COLOR_256 = 0;
+ImagePlus.COLOR_256 = 0;
 
 /**
  * 32-bit RGB color
  * 
- * @return int
+ * @const {int}
+ * @default
  * 
- * @author
+ * @author Created by ijdoc2js
  */
-const ImagePlus.COLOR_RGB = 0;
+ImagePlus.COLOR_RGB = 0;
 
 /**
  * True if any changes have been made to this image.
  * 
- * @return boolean
+ * @const {boolean}
+ * @default
  * 
- * @author
+ * @author Created by ijdoc2js
  */
-var ImagePlus.changes = 0;
+ImagePlus.changes = 0;
 
 /**
  * 
- * @return boolean
+ * @const {boolean}
+ * @default
  * 
- * @author
+ * @author Created by ijdoc2js
  */
-var ImagePlus.setIJMenuBar = 0;
+ImagePlus.setIJMenuBar = 0;
 
 /**
  * 
- * @return boolean
+ * @const {boolean}
+ * @default
  * 
- * @author
+ * @author Created by ijdoc2js
  */
-var ImagePlus.typeSet = 0;
+ImagePlus.typeSet = 0;
 
 /**
  * Locks the image so other threads can test to see if it
@@ -179,11 +192,11 @@ var ImagePlus.typeSet = 0;
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.lock = function() {
     throw new NotImplementedException("ImagePlus.lock(..)");
-}
+};
 
 /**
  * Similar to lock, but doesn't beep and display an error
@@ -191,21 +204,21 @@ ImagePlus.prototype.lock = function() {
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.lockSilently = function() {
     throw new NotImplementedException("ImagePlus.lockSilently(..)");
-}
+};
 
 /**
  * Unlocks the image.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.unlock = function() {
     throw new NotImplementedException("ImagePlus.unlock(..)");
-}
+};
 
 /**
  * Draws the image. If there is an ROI, its
@@ -214,25 +227,25 @@ ImagePlus.prototype.unlock = function() {
  * has not been called).
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.draw = function() {
     throw new NotImplementedException("ImagePlus.draw(..)");
-}
+};
 
 /**
  * Draws image and roi outline using a clip rect.
  * 
- * @params x - int
- * @params y - int
- * @params width - int
- * @params height - int
+ * @param {int} x - 
+ * @param {int} y - 
+ * @param {int} width - 
+ * @param {int} height - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.draw = function(x, y, width, height) {
     throw new NotImplementedException("ImagePlus.draw(..)");
-}
+};
 
 /**
  * Updates this image from the pixel data in its 
@@ -241,23 +254,23 @@ ImagePlus.prototype.draw = function(x, y, width, height) {
  * this image (i.e. show() has not been called).
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.updateAndDraw = function() {
     throw new NotImplementedException("ImagePlus.updateAndDraw(..)");
-}
+};
 
 /**
  * Sets the display mode of composite color images, where 'mode' 
  * should be IJ.COMPOSITE, IJ.COLOR or IJ.GRAYSCALE.
  * 
- * @params mode - int
+ * @param {int} mode - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setDisplayMode = function(mode) {
     throw new NotImplementedException("ImagePlus.setDisplayMode(..)");
-}
+};
 
 /**
  * Returns the display mode (IJ.COMPOSITE, IJ.COLOR
@@ -266,24 +279,24 @@ ImagePlus.prototype.setDisplayMode = function(mode) {
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getDisplayMode = function() {
     throw new NotImplementedException("ImagePlus.getDisplayMode(..)");
-}
+};
 
 /**
  * Controls which channels in a composite color image are displayed, 
  * where 'channels' is a list of ones and zeros that specify the channels to
  * display. For example, "101" causes channels 1 and 3 to be displayed.
  * 
- * @params channels - java.lang.String
+ * @param {java.lang.String} channels - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setActiveChannels = function(channels) {
     throw new NotImplementedException("ImagePlus.setActiveChannels(..)");
-}
+};
 
 /**
  * Updates this image from the pixel data in its 
@@ -292,11 +305,11 @@ ImagePlus.prototype.setActiveChannels = function(channels) {
  * to only update the current channel.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.updateChannelAndDraw = function() {
     throw new NotImplementedException("ImagePlus.updateChannelAndDraw(..)");
-}
+};
 
 /**
  * Returns a reference to the current ImageProcessor. The
@@ -305,11 +318,11 @@ ImagePlus.prototype.updateChannelAndDraw = function() {
  * 
  * @return ImageProcessor
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getChannelProcessor = function() {
     throw new NotImplementedException("ImagePlus.getChannelProcessor(..)");
-}
+};
 
 /**
  * Returns an array containing the lookup tables used by this image,
@@ -317,11 +330,11 @@ ImagePlus.prototype.getChannelProcessor = function() {
  * 
  * @return LUT[]
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getLuts = function() {
     throw new NotImplementedException("ImagePlus.getLuts(..)");
-}
+};
 
 /**
  * Calls draw to draw the image and also repaints the
@@ -329,11 +342,11 @@ ImagePlus.prototype.getLuts = function() {
  * the image (dimension, type, size) to be updated.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.repaintWindow = function() {
     throw new NotImplementedException("ImagePlus.repaintWindow(..)");
-}
+};
 
 /**
  * Calls updateAndDraw to update from the pixel data
@@ -342,210 +355,210 @@ ImagePlus.prototype.repaintWindow = function() {
  * the image (dimension, type, size) to be updated.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.updateAndRepaintWindow = function() {
     throw new NotImplementedException("ImagePlus.updateAndRepaintWindow(..)");
-}
+};
 
 /**
  * ImageCanvas.paint() calls this method when the
  * ImageProcessor has generated new image.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.updateImage = function() {
     throw new NotImplementedException("ImagePlus.updateImage(..)");
-}
+};
 
 /**
  * Closes the window, if any, that is displaying this image.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.hide = function() {
     throw new NotImplementedException("ImagePlus.hide(..)");
-}
+};
 
 /**
  * Closes this image and sets the ImageProcessor to null. To avoid the
  * "Save changes?" dialog, first set the public 'changes' variable to false.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.close = function() {
     throw new NotImplementedException("ImagePlus.close(..)");
-}
+};
 
 /**
  * Opens a window to display this image and clears the status bar.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.show = function() {
     throw new NotImplementedException("ImagePlus.show(..)");
-}
+};
 
 /**
  * Opens a window to display this image and displays
  * 'statusMessage' in the status bar.
  * 
- * @params statusMessage - java.lang.String
+ * @param {java.lang.String} statusMessage - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.show = function(statusMessage) {
     throw new NotImplementedException("ImagePlus.show(..)");
-}
+};
 
 /**
  * Called by ImageWindow.windowActivated().
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setActivated = function() {
     throw new NotImplementedException("ImagePlus.setActivated(..)");
-}
+};
 
 /**
  * Returns this image as a AWT image.
  * 
  * @return java.awt.Image
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getImage = function() {
     throw new NotImplementedException("ImagePlus.getImage(..)");
-}
+};
 
 /**
  * Returns a copy of this image as an 8-bit or RGB BufferedImage.
  * 
  * @return java.awt.image.BufferedImage
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getBufferedImage = function() {
     throw new NotImplementedException("ImagePlus.getBufferedImage(..)");
-}
+};
 
 /**
  * Returns this image's unique numeric ID.
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getID = function() {
     throw new NotImplementedException("ImagePlus.getID(..)");
-}
+};
 
 /**
  * Replaces the image, if any, with the one specified. 
  * Throws an IllegalStateException if an error occurs 
  * while loading the image.
  * 
- * @params img - java.awt.Image
+ * @param {java.awt.Image} img - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setImage = function(img) {
     throw new NotImplementedException("ImagePlus.setImage(..)");
-}
+};
 
 /**
  * Replaces this image with the specified ImagePlus. May
  * not work as expected if 'imp' is a CompositeImage
  * and this image is not.
  * 
- * @params imp - ImagePlus
+ * @param {ImagePlus} imp - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setImage = function(imp) {
     throw new NotImplementedException("ImagePlus.setImage(..)");
-}
+};
 
 /**
  * Replaces the ImageProcessor with the one specified and updates the
  * display. With stacks, the ImageProcessor must be the same type as the
  * other images in the stack and it must be the same width and height.
  * 
- * @params ip - ImageProcessor
+ * @param {ImageProcessor} ip - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setProcessor = function(ip) {
     throw new NotImplementedException("ImagePlus.setProcessor(..)");
-}
+};
 
 /**
  * Replaces the ImageProcessor with the one specified and updates the display. With
  * stacks, the ImageProcessor must be the same type as other images in the stack and
  * it must be the same width and height. Set 'title' to null to leave the title unchanged.
  * 
- * @params title - java.lang.String
- * @params ip - ImageProcessor
+ * @param {java.lang.String} title - 
+ * @param {ImageProcessor} ip - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setProcessor = function(title, ip) {
     throw new NotImplementedException("ImagePlus.setProcessor(..)");
-}
+};
 
 /**
  * Replaces the image with the specified stack and updates the display.
  * 
- * @params stack - ImageStack
+ * @param {ImageStack} stack - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setStack = function(stack) {
     throw new NotImplementedException("ImagePlus.setStack(..)");
-}
+};
 
 /**
  * Replaces the image with the specified stack and updates 
  * the display. Set 'title' to null to leave the title unchanged.
  * 
- * @params title - java.lang.String
- * @params newStack - ImageStack
+ * @param {java.lang.String} title - 
+ * @param {ImageStack} newStack - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setStack = function(title, newStack) {
     throw new NotImplementedException("ImagePlus.setStack(..)");
-}
+};
 
 /**
  * 
- * @params newStack - ImageStack
- * @params channels - int
- * @params slices - int
- * @params frames - int
+ * @param {ImageStack} newStack - 
+ * @param {int} channels - 
+ * @param {int} slices - 
+ * @param {int} frames - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setStack = function(newStack, channels, slices, frames) {
     throw new NotImplementedException("ImagePlus.setStack(..)");
-}
+};
 
 /**
  * Saves this image's FileInfo so it can be later
  * retieved using getOriginalFileInfo().
  * 
- * @params fi - FileInfo
+ * @param {FileInfo} fi - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setFileInfo = function(fi) {
     throw new NotImplementedException("ImagePlus.setFileInfo(..)");
-}
+};
 
 /**
  * Returns the ImageWindow that is being used to display
@@ -554,33 +567,33 @@ ImagePlus.prototype.setFileInfo = function(fi) {
  * 
  * @return ImageWindow
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getWindow = function() {
     throw new NotImplementedException("ImagePlus.getWindow(..)");
-}
+};
 
 /**
  * Returns true if this image is currently being displayed in a window.
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.isVisible = function() {
     throw new NotImplementedException("ImagePlus.isVisible(..)");
-}
+};
 
 /**
  * This method should only be called from an ImageWindow.
  * 
- * @params win - ImageWindow
+ * @param {ImageWindow} win - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setWindow = function(win) {
     throw new NotImplementedException("ImagePlus.setWindow(..)");
-}
+};
 
 /**
  * Returns the ImageCanvas being used to
@@ -588,32 +601,32 @@ ImagePlus.prototype.setWindow = function(win) {
  * 
  * @return ImageCanvas
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getCanvas = function() {
     throw new NotImplementedException("ImagePlus.getCanvas(..)");
-}
+};
 
 /**
  * Sets current foreground color.
  * 
- * @params c - java.awt.Color
+ * @param {java.awt.Color} c - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setColor = function(c) {
     throw new NotImplementedException("ImagePlus.setColor(..)");
-}
+};
 
 /**
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.isProcessor = function() {
     throw new NotImplementedException("ImagePlus.isProcessor(..)");
-}
+};
 
 /**
  * Returns a reference to the current ImageProcessor. If there
@@ -624,22 +637,22 @@ ImagePlus.prototype.isProcessor = function() {
  * 
  * @return ImageProcessor
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getProcessor = function() {
     throw new NotImplementedException("ImagePlus.getProcessor(..)");
-}
+};
 
 /**
  * Frees RAM by setting the snapshot (undo) buffer in
  * the current ImageProcessor to null.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.trimProcessor = function() {
     throw new NotImplementedException("ImagePlus.trimProcessor(..)");
-}
+};
 
 /**
  * For images with irregular ROIs, returns a byte mask, otherwise, returns
@@ -647,11 +660,11 @@ ImagePlus.prototype.trimProcessor = function() {
  * 
  * @return ImageProcessor
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getMask = function() {
     throw new NotImplementedException("ImagePlus.getMask(..)");
-}
+};
 
 /**
  * Get calibrated statistics for this image or ROI, including 
@@ -668,11 +681,11 @@ ImagePlus.prototype.getMask = function() {
  * 
  * @return ImageStatistics
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getStatistics = function() {
     throw new NotImplementedException("ImagePlus.getStatistics(..)");
-}
+};
 
 /**
  * This method returns complete calibrated statistics for this image or ROI
@@ -680,34 +693,34 @@ ImagePlus.prototype.getStatistics = function() {
  * 
  * @return ImageStatistics
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getAllStatistics = function() {
     throw new NotImplementedException("ImagePlus.getAllStatistics(..)");
-}
+};
 
 /**
  * 
  * @return ImageStatistics
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getRawStatistics = function() {
     throw new NotImplementedException("ImagePlus.getRawStatistics(..)");
-}
+};
 
 /**
  * Returns an ImageStatistics object generated using the
  * specified measurement options.
  * 
- * @params mOptions - int
+ * @param {int} mOptions - 
  * @return ImageStatistics
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getStatistics = function(mOptions) {
     throw new NotImplementedException("ImagePlus.getStatistics(..)");
-}
+};
 
 /**
  * Returns an ImageStatistics object generated using the
@@ -715,15 +728,15 @@ ImagePlus.prototype.getStatistics = function(mOptions) {
  * Note: except for float images, the number of bins
  * is currently fixed at 256.
  * 
- * @params mOptions - int
- * @params nBins - int
+ * @param {int} mOptions - 
+ * @param {int} nBins - 
  * @return ImageStatistics
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getStatistics = function(mOptions, nBins) {
     throw new NotImplementedException("ImagePlus.getStatistics(..)");
-}
+};
 
 /**
  * Returns an ImageStatistics object generated using the
@@ -731,28 +744,28 @@ ImagePlus.prototype.getStatistics = function(mOptions, nBins) {
  * Note: for 8-bit and RGB images, the number of bins
  * is fixed at 256 and the histogram range is always 0-255.
  * 
- * @params mOptions - int
- * @params nBins - int
- * @params histMin - double
- * @params histMax - double
+ * @param {int} mOptions - 
+ * @param {int} nBins - 
+ * @param {double} histMin - 
+ * @param {double} histMax - 
  * @return ImageStatistics
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getStatistics = function(mOptions, nBins, histMin, histMax) {
     throw new NotImplementedException("ImagePlus.getStatistics(..)");
-}
+};
 
 /**
  * Returns the image name.
  * 
  * @return java.lang.String
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getTitle = function() {
     throw new NotImplementedException("ImagePlus.getTitle(..)");
-}
+};
 
 /**
  * Returns a shortened version of image name that does not 
@@ -760,145 +773,145 @@ ImagePlus.prototype.getTitle = function() {
  * 
  * @return java.lang.String
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getShortTitle = function() {
     throw new NotImplementedException("ImagePlus.getShortTitle(..)");
-}
+};
 
 /**
  * Sets the image name.
  * 
- * @params title - java.lang.String
+ * @param {java.lang.String} title - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setTitle = function(title) {
     throw new NotImplementedException("ImagePlus.setTitle(..)");
-}
+};
 
 /**
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getWidth = function() {
     throw new NotImplementedException("ImagePlus.getWidth(..)");
-}
+};
 
 /**
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getHeight = function() {
     throw new NotImplementedException("ImagePlus.getHeight(..)");
-}
+};
 
 /**
  * If this is a stack, returns the number of slices, else returns 1.
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getStackSize = function() {
     throw new NotImplementedException("ImagePlus.getStackSize(..)");
-}
+};
 
 /**
  * If this is a stack, returns the actual number of images in the stack, else returns 1.
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getImageStackSize = function() {
     throw new NotImplementedException("ImagePlus.getImageStackSize(..)");
-}
+};
 
 /**
  * Sets the 3rd, 4th and 5th dimensions, where 
  * <code>nChannels</code>*<code>nSlices</code>*<code>nFrames</code> 
  * must be equal to the stack size.
  * 
- * @params nChannels - int
- * @params nSlices - int
- * @params nFrames - int
+ * @param {int} nChannels - 
+ * @param {int} nSlices - 
+ * @param {int} nFrames - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setDimensions = function(nChannels, nSlices, nFrames) {
     throw new NotImplementedException("ImagePlus.setDimensions(..)");
-}
+};
 
 /**
  * Returns 'true' if this image is a hyperstack.
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.isHyperStack = function() {
     throw new NotImplementedException("ImagePlus.isHyperStack(..)");
-}
+};
 
 /**
  * Returns the number of dimensions (2, 3, 4 or 5).
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getNDimensions = function() {
     throw new NotImplementedException("ImagePlus.getNDimensions(..)");
-}
+};
 
 /**
  * Returns 'true' if this is a hyperstack currently being displayed in a StackWindow.
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.isDisplayedHyperStack = function() {
     throw new NotImplementedException("ImagePlus.isDisplayedHyperStack(..)");
-}
+};
 
 /**
  * Returns the number of channels.
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getNChannels = function() {
     throw new NotImplementedException("ImagePlus.getNChannels(..)");
-}
+};
 
 /**
  * Returns the image depth (number of z-slices).
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getNSlices = function() {
     throw new NotImplementedException("ImagePlus.getNSlices(..)");
-}
+};
 
 /**
  * Returns the number of frames (time-points).
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getNFrames = function() {
     throw new NotImplementedException("ImagePlus.getNFrames(..)");
-}
+};
 
 /**
  * Returns the dimensions of this image (width, height, nChannels, 
@@ -906,22 +919,22 @@ ImagePlus.prototype.getNFrames = function() {
  * 
  * @return int[]
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getDimensions = function() {
     throw new NotImplementedException("ImagePlus.getDimensions(..)");
-}
+};
 
 /**
  * 
- * @params varify - boolean
+ * @param {boolean} varify - 
  * @return int[]
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getDimensions = function(varify) {
     throw new NotImplementedException("ImagePlus.getDimensions(..)");
-}
+};
 
 /**
  * Returns the current image type (ImagePlus.GRAY8, ImagePlus.GRAY16,
@@ -929,11 +942,11 @@ ImagePlus.prototype.getDimensions = function(varify) {
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getType = function() {
     throw new NotImplementedException("ImagePlus.getType(..)");
-}
+};
 
 /**
  * Returns the bit depth, 8, 16, 24 (RGB) or 32, or 0 if the bit depth 
@@ -941,36 +954,36 @@ ImagePlus.prototype.getType = function() {
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getBitDepth = function() {
     throw new NotImplementedException("ImagePlus.getBitDepth(..)");
-}
+};
 
 /**
  * Returns the number of bytes per pixel.
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getBytesPerPixel = function() {
     throw new NotImplementedException("ImagePlus.getBytesPerPixel(..)");
-}
+};
 
 /**
  * Returns the string value from the "Info" property string 
  * associated with 'key', or null if the key is not found. 
  * Works with DICOM tags and Bio-Formats metadata.
  * 
- * @params key - java.lang.String
+ * @param {java.lang.String} key - 
  * @return java.lang.String
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getStringProperty = function(key) {
     throw new NotImplementedException("ImagePlus.getStringProperty(..)");
-}
+};
 
 /**
  * Returns the numeric value from the "Info" property string 
@@ -978,84 +991,85 @@ ImagePlus.prototype.getStringProperty = function(key) {
  * value associated with the key is not numeric. Works with
  * DICOM tags and Bio-Formats metadata.
  * 
- * @params key - java.lang.String
+ * @param {java.lang.String} key - 
  * @return double
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getNumericProperty = function(key) {
     throw new NotImplementedException("ImagePlus.getNumericProperty(..)");
-}
+};
 
 /**
  * <span class="deprecatedLabel">Deprecated.</span>&nbsp;
  * 
- * @params key - java.lang.String
+ * @deprecated .</span>&nbsp;
+ * @param {java.lang.String} key - 
  * @return java.lang.String
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getProp = function(key) {
     throw new NotImplementedException("ImagePlus.getProp(..)");
-}
+};
 
 /**
  * Returns the "Info" property string, or null if it is not found.
  * 
  * @return java.lang.String
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getInfoProperty = function() {
     throw new NotImplementedException("ImagePlus.getInfoProperty(..)");
-}
+};
 
 /**
  * Returns the property associated with 'key', or null if it is not found.
  * 
- * @params key - java.lang.String
+ * @param {java.lang.String} key - 
  * @return java.lang.Object
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getProperty = function(key) {
     throw new NotImplementedException("ImagePlus.getProperty(..)");
-}
+};
 
 /**
  * Adds a key-value pair to this image's properties. The key
  * is removed from the properties table if value is null.
  * 
- * @params key - java.lang.String
- * @params value - java.lang.Object
+ * @param {java.lang.String} key - 
+ * @param {java.lang.Object} value - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setProperty = function(key, value) {
     throw new NotImplementedException("ImagePlus.setProperty(..)");
-}
+};
 
 /**
  * Returns this image's Properties. May return null.
  * 
  * @return java.util.Properties
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getProperties = function() {
     throw new NotImplementedException("ImagePlus.getProperties(..)");
-}
+};
 
 /**
  * Creates a LookUpTable object that corresponds to this image.
  * 
  * @return LookUpTable
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.createLut = function() {
     throw new NotImplementedException("ImagePlus.createLut(..)");
-}
+};
 
 /**
  * Returns true is this image uses an inverting LUT that 
@@ -1063,11 +1077,11 @@ ImagePlus.prototype.createLut = function() {
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.isInvertedLut = function() {
     throw new NotImplementedException("ImagePlus.isInvertedLut(..)");
-}
+};
 
 /**
  * Returns the pixel value at (x,y) as a 4 element array. Grayscale values
@@ -1075,15 +1089,15 @@ ImagePlus.prototype.isInvertedLut = function() {
  * 3 elements. For indexed color images, the RGB values are returned in the
  * first 3 three elements and the index (0-255) is returned in the last.
  * 
- * @params x - int
- * @params y - int
+ * @param {int} x - 
+ * @param {int} y - 
  * @return int[]
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getPixel = function(x, y) {
     throw new NotImplementedException("ImagePlus.getPixel(..)");
-}
+};
 
 /**
  * Returns an empty image stack that has the same
@@ -1091,11 +1105,11 @@ ImagePlus.prototype.getPixel = function(x, y) {
  * 
  * @return ImageStack
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.createEmptyStack = function() {
     throw new NotImplementedException("ImagePlus.createEmptyStack(..)");
-}
+};
 
 /**
  * Returns the image stack. The stack may have only 
@@ -1105,359 +1119,359 @@ ImagePlus.prototype.createEmptyStack = function() {
  * 
  * @return ImageStack
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getStack = function() {
     throw new NotImplementedException("ImagePlus.getStack(..)");
-}
+};
 
 /**
  * Returns the base image stack.
  * 
  * @return ImageStack
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getImageStack = function() {
     throw new NotImplementedException("ImagePlus.getImageStack(..)");
-}
+};
 
 /**
  * Returns the current stack index (one-based) or 1 if this is a single image.
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getCurrentSlice = function() {
     throw new NotImplementedException("ImagePlus.getCurrentSlice(..)");
-}
+};
 
 /**
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getChannel = function() {
     throw new NotImplementedException("ImagePlus.getChannel(..)");
-}
+};
 
 /**
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getSlice = function() {
     throw new NotImplementedException("ImagePlus.getSlice(..)");
-}
+};
 
 /**
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getFrame = function() {
     throw new NotImplementedException("ImagePlus.getFrame(..)");
-}
+};
 
 /**
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.killStack = function() {
     throw new NotImplementedException("ImagePlus.killStack(..)");
-}
+};
 
 /**
  * Sets the current hyperstack position and updates the display,
  * where 'channel', 'slice' and 'frame' are one-based indexes.
  * 
- * @params channel - int
- * @params slice - int
- * @params frame - int
+ * @param {int} channel - 
+ * @param {int} slice - 
+ * @param {int} frame - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setPosition = function(channel, slice, frame) {
     throw new NotImplementedException("ImagePlus.setPosition(..)");
-}
+};
 
 /**
  * Sets the current hyperstack position without updating the display,
  * where 'channel', 'slice' and 'frame' are one-based indexes.
  * 
- * @params channel - int
- * @params slice - int
- * @params frame - int
+ * @param {int} channel - 
+ * @param {int} slice - 
+ * @param {int} frame - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setPositionWithoutUpdate = function(channel, slice, frame) {
     throw new NotImplementedException("ImagePlus.setPositionWithoutUpdate(..)");
-}
+};
 
 /**
  * Sets the hyperstack channel position (one based).
  * 
- * @params channel - int
+ * @param {int} channel - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setC = function(channel) {
     throw new NotImplementedException("ImagePlus.setC(..)");
-}
+};
 
 /**
  * Sets the hyperstack slice position (one based).
  * 
- * @params slice - int
+ * @param {int} slice - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setZ = function(slice) {
     throw new NotImplementedException("ImagePlus.setZ(..)");
-}
+};
 
 /**
  * Sets the hyperstack frame position (one based).
  * 
- * @params frame - int
+ * @param {int} frame - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setT = function(frame) {
     throw new NotImplementedException("ImagePlus.setT(..)");
-}
+};
 
 /**
  * Returns the current hyperstack channel position.
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getC = function() {
     throw new NotImplementedException("ImagePlus.getC(..)");
-}
+};
 
 /**
  * Returns the current hyperstack slice position.
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getZ = function() {
     throw new NotImplementedException("ImagePlus.getZ(..)");
-}
+};
 
 /**
  * Returns the current hyperstack frame position.
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getT = function() {
     throw new NotImplementedException("ImagePlus.getT(..)");
-}
+};
 
 /**
  * Returns that stack index (one-based) corresponding to the specified position.
  * 
- * @params channel - int
- * @params slice - int
- * @params frame - int
+ * @param {int} channel - 
+ * @param {int} slice - 
+ * @param {int} frame - 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getStackIndex = function(channel, slice, frame) {
     throw new NotImplementedException("ImagePlus.getStackIndex(..)");
-}
+};
 
 /**
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.resetStack = function() {
     throw new NotImplementedException("ImagePlus.resetStack(..)");
-}
+};
 
 /**
  * Set the current hyperstack position based on the stack index 'n' (one-based).
  * 
- * @params n - int
+ * @param {int} n - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setPosition = function(n) {
     throw new NotImplementedException("ImagePlus.setPosition(..)");
-}
+};
 
 /**
  * Converts the stack index 'n' (one-based) into a hyperstack position (channel, slice, frame).
  * 
- * @params n - int
+ * @param {int} n - 
  * @return int[]
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.convertIndexToPosition = function(n) {
     throw new NotImplementedException("ImagePlus.convertIndexToPosition(..)");
-}
+};
 
 /**
  * Displays the specified stack image, where 1&lt;=n&lt;=stackSize.
  * Does nothing if this image is not a stack.
  * 
- * @params n - int
+ * @param {int} n - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setSlice = function(n) {
     throw new NotImplementedException("ImagePlus.setSlice(..)");
-}
+};
 
 /**
  * Displays the specified stack image (1&lt;=n&lt;=stackSize)
  * without updating the display.
  * 
- * @params n - int
+ * @param {int} n - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setSliceWithoutUpdate = function(n) {
     throw new NotImplementedException("ImagePlus.setSliceWithoutUpdate(..)");
-}
+};
 
 /**
  * Returns the current selection, or null if there is no selection.
  * 
  * @return Roi
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getRoi = function() {
     throw new NotImplementedException("ImagePlus.getRoi(..)");
-}
+};
 
 /**
  * Assigns the specified ROI to this image and displays it. Any existing
  * ROI is deleted if <code>roi</code> is null or its width or height is zero.
  * 
- * @params newRoi - Roi
+ * @param {Roi} newRoi - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setRoi = function(newRoi) {
     throw new NotImplementedException("ImagePlus.setRoi(..)");
-}
+};
 
 /**
  * Assigns 'newRoi' to this image and displays it if 'updateDisplay' is true.
  * 
- * @params newRoi - Roi
- * @params updateDisplay - boolean
+ * @param {Roi} newRoi - 
+ * @param {boolean} updateDisplay - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setRoi = function(newRoi, updateDisplay) {
     throw new NotImplementedException("ImagePlus.setRoi(..)");
-}
+};
 
 /**
  * Creates a rectangular selection.
  * 
- * @params x - int
- * @params y - int
- * @params width - int
- * @params height - int
+ * @param {int} x - 
+ * @param {int} y - 
+ * @param {int} width - 
+ * @param {int} height - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setRoi = function(x, y, width, height) {
     throw new NotImplementedException("ImagePlus.setRoi(..)");
-}
+};
 
 /**
  * Creates a rectangular selection.
  * 
- * @params r - java.awt.Rectangle
+ * @param {java.awt.Rectangle} r - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setRoi = function(r) {
     throw new NotImplementedException("ImagePlus.setRoi(..)");
-}
+};
 
 /**
  * Starts the process of creating a new selection, where sx and sy are the
  * starting screen coordinates. The selection type is determined by which tool in
  * the tool bar is active. The user interactively sets the selection size and shape.
  * 
- * @params sx - int
- * @params sy - int
+ * @param {int} sx - 
+ * @param {int} sy - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.createNewRoi = function(sx, sy) {
     throw new NotImplementedException("ImagePlus.createNewRoi(..)");
-}
+};
 
 /**
  * Deletes the current region of interest. Makes a copy of the ROI
  * so it can be recovered by Edit/Selection/Restore Selection.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.deleteRoi = function() {
     throw new NotImplementedException("ImagePlus.deleteRoi(..)");
-}
+};
 
 /**
  * Deletes the current region of interest.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.killRoi = function() {
     throw new NotImplementedException("ImagePlus.killRoi(..)");
-}
+};
 
 /**
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.saveRoi = function() {
     throw new NotImplementedException("ImagePlus.saveRoi(..)");
-}
+};
 
 /**
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.restoreRoi = function() {
     throw new NotImplementedException("ImagePlus.restoreRoi(..)");
-}
+};
 
 /**
  * Implements the File/Revert command.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.revert = function() {
     throw new NotImplementedException("ImagePlus.revert(..)");
-}
+};
 
 /**
  * Returns a FileInfo object containing information, including the
@@ -1466,11 +1480,11 @@ ImagePlus.prototype.revert = function() {
  * 
  * @return FileInfo
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getFileInfo = function() {
     throw new NotImplementedException("ImagePlus.getFileInfo(..)");
-}
+};
 
 /**
  * Returns the FileInfo object that was used to open this image.
@@ -1478,71 +1492,71 @@ ImagePlus.prototype.getFileInfo = function() {
  * 
  * @return FileInfo
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getOriginalFileInfo = function() {
     throw new NotImplementedException("ImagePlus.getOriginalFileInfo(..)");
-}
+};
 
 /**
  * Used by ImagePlus to monitor loading of images.
  * 
- * @params img - java.awt.Image
- * @params flags - int
- * @params x - int
- * @params y - int
- * @params w - int
- * @params h - int
+ * @param {java.awt.Image} img - 
+ * @param {int} flags - 
+ * @param {int} x - 
+ * @param {int} y - 
+ * @param {int} w - 
+ * @param {int} h - 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.imageUpdate = function(img, flags, x, y, w, h) {
     throw new NotImplementedException("ImagePlus.imageUpdate(..)");
-}
+};
 
 /**
  * Sets the ImageProcessor, Roi, AWT Image and stack image
  * arrays to null. Does nothing if the image is locked.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.flush = function() {
     throw new NotImplementedException("ImagePlus.flush(..)");
-}
+};
 
 /**
  * 
- * @params ignoreFlush - boolean
+ * @param {boolean} ignoreFlush - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setIgnoreFlush = function(ignoreFlush) {
     throw new NotImplementedException("ImagePlus.setIgnoreFlush(..)");
-}
+};
 
 /**
  * Returns a copy of this image or stack, cropped if there is an ROI.
  * 
  * @return ImagePlus
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.duplicate = function() {
     throw new NotImplementedException("ImagePlus.duplicate(..)");
-}
+};
 
 /**
  * Returns a copy this image or stack slice, cropped if there is an ROI.
  * 
  * @return ImagePlus
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.crop = function() {
     throw new NotImplementedException("ImagePlus.crop(..)");
-}
+};
 
 /**
  * Returns a new ImagePlus with this image's attributes
@@ -1550,49 +1564,49 @@ ImagePlus.prototype.crop = function() {
  * 
  * @return ImagePlus
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.createImagePlus = function() {
     throw new NotImplementedException("ImagePlus.createImagePlus(..)");
-}
+};
 
 /**
  * This method has been replaced by IJ.createHyperStack().
  * 
- * @params title - java.lang.String
- * @params channels - int
- * @params slices - int
- * @params frames - int
- * @params bitDepth - int
+ * @param {java.lang.String} title - 
+ * @param {int} channels - 
+ * @param {int} slices - 
+ * @param {int} frames - 
+ * @param {int} bitDepth - 
  * @return ImagePlus
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.createHyperStack = function(title, channels, slices, frames, bitDepth) {
     throw new NotImplementedException("ImagePlus.createHyperStack(..)");
-}
+};
 
 /**
  * Copies the calibration of the specified image to this image.
  * 
- * @params imp - ImagePlus
+ * @param {ImagePlus} imp - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.copyScale = function(imp) {
     throw new NotImplementedException("ImagePlus.copyScale(..)");
-}
+};
 
 /**
  * Copies attributes (name, ID, calibration, path) of the specified image to this image.
  * 
- * @params imp - ImagePlus
+ * @param {ImagePlus} imp - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.copyAttributes = function(imp) {
     throw new NotImplementedException("ImagePlus.copyAttributes(..)");
-}
+};
 
 /**
  * Calls System.currentTimeMillis() to save the current
@@ -1600,11 +1614,11 @@ ImagePlus.prototype.copyAttributes = function(imp) {
  * to calculate the elapsed time of an operation.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.startTiming = function() {
     throw new NotImplementedException("ImagePlus.startTiming(..)");
-}
+};
 
 /**
  * Returns the time in milliseconds when 
@@ -1612,66 +1626,66 @@ ImagePlus.prototype.startTiming = function() {
  * 
  * @return long
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getStartTime = function() {
     throw new NotImplementedException("ImagePlus.getStartTime(..)");
-}
+};
 
 /**
  * Returns this image's calibration.
  * 
  * @return Calibration
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getCalibration = function() {
     throw new NotImplementedException("ImagePlus.getCalibration(..)");
-}
+};
 
 /**
  * Sets this image's calibration.
  * 
- * @params cal - Calibration
+ * @param {Calibration} cal - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setCalibration = function(cal) {
     throw new NotImplementedException("ImagePlus.setCalibration(..)");
-}
+};
 
 /**
  * Sets the system-wide calibration.
  * 
- * @params global - Calibration
+ * @param {Calibration} global - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setGlobalCalibration = function(global) {
     throw new NotImplementedException("ImagePlus.setGlobalCalibration(..)");
-}
+};
 
 /**
  * Returns the system-wide calibration, or null.
  * 
  * @return Calibration
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getGlobalCalibration = function() {
     throw new NotImplementedException("ImagePlus.getGlobalCalibration(..)");
-}
+};
 
 /**
  * This is a version of getGlobalCalibration() that can be called from a static context.
  * 
  * @return Calibration
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getStaticGlobalCalibration = function() {
     throw new NotImplementedException("ImagePlus.getStaticGlobalCalibration(..)");
-}
+};
 
 /**
  * Returns this image's local calibration, ignoring 
@@ -1679,35 +1693,35 @@ ImagePlus.prototype.getStaticGlobalCalibration = function() {
  * 
  * @return Calibration
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getLocalCalibration = function() {
     throw new NotImplementedException("ImagePlus.getLocalCalibration(..)");
-}
+};
 
 /**
  * 
- * @params ignoreGlobalCalibration - boolean
+ * @param {boolean} ignoreGlobalCalibration - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setIgnoreGlobalCalibration = function(ignoreGlobalCalibration) {
     throw new NotImplementedException("ImagePlus.setIgnoreGlobalCalibration(..)");
-}
+};
 
 /**
  * Displays the cursor coordinates and pixel value in the status bar.
  * Called by ImageCanvas when the mouse moves. Can be overridden by
  * ImagePlus subclasses.
  * 
- * @params x - int
- * @params y - int
+ * @param {int} x - 
+ * @param {int} y - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.mouseMoved = function(x, y) {
     throw new NotImplementedException("ImagePlus.mouseMoved(..)");
-}
+};
 
 /**
  * Redisplays the (x,y) coordinates and pixel value (which may
@@ -1715,48 +1729,48 @@ ImagePlus.prototype.mouseMoved = function(x, y) {
  * Previous Slice commands to update the z-coordinate and pixel value.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.updateStatusbarValue = function() {
     throw new NotImplementedException("ImagePlus.updateStatusbarValue(..)");
-}
+};
 
 /**
  * Converts the current cursor location to a string.
  * 
- * @params x - int
- * @params y - int
+ * @param {int} x - 
+ * @param {int} y - 
  * @return java.lang.String
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getLocationAsString = function(x, y) {
     throw new NotImplementedException("ImagePlus.getLocationAsString(..)");
-}
+};
 
 /**
  * Copies the contents of the current selection, or the entire 
  * image if there is no selection, to the internal clipboard.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.copy = function() {
     throw new NotImplementedException("ImagePlus.copy(..)");
-}
+};
 
 /**
  * Copies the contents of the current selection to the internal clipboard.
  * Copies the entire image if there is no selection. Also clears
  * the selection if <code>cut</code> is true.
  * 
- * @params cut - boolean
+ * @param {boolean} cut - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.copy = function(cut) {
     throw new NotImplementedException("ImagePlus.copy(..)");
-}
+};
 
 /**
  * Inserts the contents of the internal clipboard into the active image. If there
@@ -1764,94 +1778,94 @@ ImagePlus.prototype.copy = function(cut) {
  * into that selection, otherwise the selection is inserted into the center of the image.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.paste = function() {
     throw new NotImplementedException("ImagePlus.paste(..)");
-}
+};
 
 /**
  * Returns the internal clipboard or null if the internal clipboard is empty.
  * 
  * @return ImagePlus
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getClipboard = function() {
     throw new NotImplementedException("ImagePlus.getClipboard(..)");
-}
+};
 
 /**
  * Clears the internal clipboard.
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.resetClipboard = function() {
     throw new NotImplementedException("ImagePlus.resetClipboard(..)");
-}
+};
 
 /**
  * 
- * @params listener - ImageListener
+ * @param {ImageListener} listener - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.addImageListener = function(listener) {
     throw new NotImplementedException("ImagePlus.addImageListener(..)");
-}
+};
 
 /**
  * 
- * @params listener - ImageListener
+ * @param {ImageListener} listener - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.removeImageListener = function(listener) {
     throw new NotImplementedException("ImagePlus.removeImageListener(..)");
-}
+};
 
 /**
  * Returns 'true' if the image is locked.
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.isLocked = function() {
     throw new NotImplementedException("ImagePlus.isLocked(..)");
-}
+};
 
 /**
  * 
- * @params openAsHyperStack - boolean
+ * @param {boolean} openAsHyperStack - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setOpenAsHyperStack = function(openAsHyperStack) {
     throw new NotImplementedException("ImagePlus.setOpenAsHyperStack(..)");
-}
+};
 
 /**
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getOpenAsHyperStack = function() {
     throw new NotImplementedException("ImagePlus.getOpenAsHyperStack(..)");
-}
+};
 
 /**
  * Returns true if this is a CompositeImage.
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.isComposite = function() {
     throw new NotImplementedException("ImagePlus.isComposite(..)");
-}
+};
 
 /**
  * Returns the display mode (IJ.COMPOSITE, IJ.COLOR
@@ -1859,44 +1873,44 @@ ImagePlus.prototype.isComposite = function() {
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getCompositeMode = function() {
     throw new NotImplementedException("ImagePlus.getCompositeMode(..)");
-}
+};
 
 /**
  * Sets the display range of the current channel. With non-composite
  * images it is identical to ip.setMinAndMax(min, max).
  * 
- * @params min - double
- * @params max - double
+ * @param {double} min - 
+ * @param {double} max - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setDisplayRange = function(min, max) {
     throw new NotImplementedException("ImagePlus.setDisplayRange(..)");
-}
+};
 
 /**
  * 
  * @return double
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getDisplayRangeMin = function() {
     throw new NotImplementedException("ImagePlus.getDisplayRangeMin(..)");
-}
+};
 
 /**
  * 
  * @return double
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getDisplayRangeMax = function() {
     throw new NotImplementedException("ImagePlus.getDisplayRangeMax(..)");
-}
+};
 
 /**
  * Sets the display range of specified channels in an RGB image, where 4=red,
@@ -1904,222 +1918,222 @@ ImagePlus.prototype.getDisplayRangeMax = function() {
  * identical to setDisplayRange(min, max). This method is used by the 
  * Image/Adjust/Color Balance tool .
  * 
- * @params min - double
- * @params max - double
- * @params channels - int
+ * @param {double} min - 
+ * @param {double} max - 
+ * @param {int} channels - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setDisplayRange = function(min, max, channels) {
     throw new NotImplementedException("ImagePlus.setDisplayRange(..)");
-}
+};
 
 /**
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.resetDisplayRange = function() {
     throw new NotImplementedException("ImagePlus.resetDisplayRange(..)");
-}
+};
 
 /**
  * Returns 'true' if this image is thresholded.
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.isThreshold = function() {
     throw new NotImplementedException("ImagePlus.isThreshold(..)");
-}
+};
 
 /**
  * Set the default 16-bit display range, where 'bitDepth' must be 0 (auto-scaling), 
  * 8 (0-255), 10 (0-1023), 12 (0-4095, 14 (0-16383), 15 (0-32767) or 16 (0-65535).
  * 
- * @params bitDepth - int
+ * @param {int} bitDepth - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setDefault16bitRange = function(bitDepth) {
     throw new NotImplementedException("ImagePlus.setDefault16bitRange(..)");
-}
+};
 
 /**
  * Returns the default 16-bit display range, 0 (auto-scaling), 8, 10, 12, 14, 15 or 16.
  * 
  * @return int
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getDefault16bitRange = function() {
     throw new NotImplementedException("ImagePlus.getDefault16bitRange(..)");
-}
+};
 
 /**
  * 
- * @params c - int
- * @params z - int
- * @params t - int
+ * @param {int} c - 
+ * @param {int} z - 
+ * @param {int} t - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.updatePosition = function(c, z, t) {
     throw new NotImplementedException("ImagePlus.updatePosition(..)");
-}
+};
 
 /**
  * Returns a "flattened" version of this image, in RGB format.
  * 
  * @return ImagePlus
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.flatten = function() {
     throw new NotImplementedException("ImagePlus.flatten(..)");
-}
+};
 
 /**
  * Flattens all slices of this stack or HyperStack.<br>
  * 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.flattenStack = function() {
     throw new NotImplementedException("ImagePlus.flattenStack(..)");
-}
+};
 
 /**
  * Assigns a LUT (lookup table) to this image.
  * 
- * @params lut - LUT
+ * @param {LUT} lut - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setLut = function(lut) {
     throw new NotImplementedException("ImagePlus.setLut(..)");
-}
+};
 
 /**
  * Installs a list of ROIs that will be drawn on this image as a non-destructive overlay.
  * 
- * @params overlay - Overlay
+ * @param {Overlay} overlay - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setOverlay = function(overlay) {
     throw new NotImplementedException("ImagePlus.setOverlay(..)");
-}
+};
 
 /**
  * Creates an Overlay from the specified Shape, Color 
  * and BasicStroke, and assigns it to this image.
  * 
- * @params shape - java.awt.Shape
- * @params color - java.awt.Color
- * @params stroke - java.awt.BasicStroke
+ * @param {java.awt.Shape} shape - 
+ * @param {java.awt.Color} color - 
+ * @param {java.awt.BasicStroke} stroke - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setOverlay = function(shape, color, stroke) {
     throw new NotImplementedException("ImagePlus.setOverlay(..)");
-}
+};
 
 /**
  * Creates an Overlay from the specified ROI, and assigns it to this image.
  * 
- * @params roi - Roi
- * @params strokeColor - java.awt.Color
- * @params strokeWidth - int
- * @params fillColor - java.awt.Color
+ * @param {Roi} roi - 
+ * @param {java.awt.Color} strokeColor - 
+ * @param {int} strokeWidth - 
+ * @param {java.awt.Color} fillColor - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setOverlay = function(roi, strokeColor, strokeWidth, fillColor) {
     throw new NotImplementedException("ImagePlus.setOverlay(..)");
-}
+};
 
 /**
  * Returns the current overly, or null if this image does not have an overlay.
  * 
  * @return Overlay
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getOverlay = function() {
     throw new NotImplementedException("ImagePlus.getOverlay(..)");
-}
+};
 
 /**
  * 
- * @params hide - boolean
+ * @param {boolean} hide - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setHideOverlay = function(hide) {
     throw new NotImplementedException("ImagePlus.setHideOverlay(..)");
-}
+};
 
 /**
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.getHideOverlay = function() {
     throw new NotImplementedException("ImagePlus.getHideOverlay(..)");
-}
+};
 
 /**
  * Enable/disable use of antialiasing by the flatten() method.
  * 
- * @params antialiasRendering - boolean
+ * @param {boolean} antialiasRendering - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setAntialiasRendering = function(antialiasRendering) {
     throw new NotImplementedException("ImagePlus.setAntialiasRendering(..)");
-}
+};
 
 /**
  * Returns a shallow copy of this ImagePlus.
  * 
  * @return java.lang.Object
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.clone = function() {
     throw new NotImplementedException("ImagePlus.clone(..)");
-}
+};
 
 /**
  * 
  * @return java.lang.String
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.toString = function() {
     throw new NotImplementedException("ImagePlus.toString(..)");
-}
+};
 
 /**
  * 
- * @params b - boolean
+ * @param {boolean} b - 
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setIJMenuBar = function(b) {
     throw new NotImplementedException("ImagePlus.setIJMenuBar(..)");
-}
+};
 
 /**
  * 
  * @return boolean
  * 
- * @author
+ * @author Created by ijdoc2js
  */
 ImagePlus.prototype.setIJMenuBar = function() {
     throw new NotImplementedException("ImagePlus.setIJMenuBar(..)");
-}
+};
 
