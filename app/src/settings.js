@@ -88,8 +88,9 @@ var ijclasses = [
     "url": "./api/ij/measure/SplineFitter.html"
   }, 
   {
-    "process": 0, 
-    "url": "./api/ij/measure/Measurements.html"
+    "process": 2, 
+    "url": "./api/ij/measure/Measurements.html",
+    "author" : "jct"
   }, 
   {
     "process": 0, 
@@ -104,8 +105,9 @@ var ijclasses = [
     "url": "./api/ij/ImageListener.html"
   }, 
   {
-    "process": 1, 
-    "url": "./api/ij/IJ.html"
+    "process": 2, 
+    "url": "./api/ij/IJ.html",
+    "author" : "jct"
   }, 
   {
     "process": 0, 
@@ -120,8 +122,9 @@ var ijclasses = [
     "url": "./api/ij/LookUpTable.html"
   }, 
   {
-    "process": 1, 
-    "url": "./api/ij/ImagePlus.html"
+    "process": 2, 
+    "url": "./api/ij/ImagePlus.html",
+    "author" : "jct"
   }, 
   {
     "process": 0, 
@@ -232,8 +235,9 @@ var ijclasses = [
     "url": "./api/ij/process/ShortStatistics.html"
   }, 
   {
-    "process": 1, 
-    "url": "./api/ij/process/ImageProcessor.html"
+    "process": 2, 
+    "url": "./api/ij/process/ImageProcessor.html",
+    "author" : "jct"
   }, 
   {
     "process": 0, 

@@ -97,13 +97,21 @@ for (let k = 0; k < info.ijclasses.length; k++) {
                                     // Parse arguments
                                     for (let j=argIndex; j < words.length; j+=2) {
                                         if (words[j] !== '') {
-                                            fun.args.push({type: words[j],name:words[j+1]});
+                                            if (words[j] === 'throws') {
+                                                fun.throws = words[j+1];
+                                            }
+                                            else {
+                                                fun.args.push({type: words[j],name:words[j+1]});
+                                            }
                                         }
                                     }
                                 }
                             } // End of <pre>
                             else if (child.nodeName.toLowerCase() === 'div') {
                                 fun.comment = child.innerHTML.replace(/\n/g,'\n * ').replace(/ +/g,' ');
+                                if (fun.comment.includes('Deprecated') ) {
+                                    fun.deprecated = fun.comment.substr(fun.comment.indexOf('Deprecated.')+'Deprecated'.length);
+                                }
                             }
                         }
                         if (fun.visibility === 'public') {
@@ -194,11 +202,21 @@ for (let k = 0; k < info.ijclasses.length; k++) {
                         }
 
                         klass += ' * \n';
+                        
+                        if (arr.methods[i].deprecated !== undefined) {
+                            klass += ' * @deprecated '+arr.methods[i].deprecated + '\n';
+                        }
+
                         for (let j in arr.methods[i].args) {
                             klass += ' * @param {' + arr.methods[i].args[j].type + '} ' + arr.methods[i].args[j].name + ' - \n';
                         }
 
-                        if (arr.methods[i].ret !== 'void') {
+                        if (arr.methods[i].throws !== undefined) {
+                            klass += ' * @throws {'+arr.methods[i].throws + '}\n';
+                        }
+                        
+                        
+                       if (arr.methods[i].ret !== 'void') {
                             klass += ' * @return '+arr.methods[i].ret + '\n';
                         }
                         klass += ' * \n';
