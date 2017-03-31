@@ -1,0 +1,450 @@
+/**
+ * CSS Adapted from:
+ * http://css-snippets.com/drop-down-navigation/
+ * http://css-snippets.com/pseudo-elements/
+ * Author: Lisa Catalano
+ **/
+
+html, body {
+    height: 100%;
+    margin: 0; padding: 0;
+}
+
+body {
+  display : table;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #000; /* #ccc; */
+}
+
+header,.inner,footer {
+  display : table-row;
+}
+footer {
+  height: 20px;
+  background-color: #444;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8em;
+  text-align: left;
+  color: #fff;
+  padding: 2px 10px 2px 10px;
+}
+
+input[type="range"] {
+    position: relative;
+    margin-left: 1em;
+}
+input[type="range"]:after,
+input[type="range"]:before {
+    position: absolute;
+    top: 1em;
+    color: #aaa;
+}
+input[type="range"]:before {
+    left:0em;
+    content: attr(min);
+}
+input[type="range"]:after {
+    right: 0em;
+    content: attr(max);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  text-align: left;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding-left: 15px;
+  border-bottom: 1px solid #888;
+  transition: .3s background-color;
+}
+
+nav a:hover {
+  background-color: #005f5f;
+}
+
+nav a.active {
+  background-color: #aaa;
+  color: #444;
+  cursor: default;
+}
+
+/* Sub Menus */
+nav li li {
+  font-size: 0.8em;
+}
+
+/* Sub sub Menus */
+nav li li li {
+  font-size: 0.9em;
+}
+
+	.sticky-container{
+		/*background-color: #333;*/
+		padding: 0px;
+		margin: 0px;
+		position: fixed;
+		right: -110px;
+		top:90px;
+		width: 200px;
+		height: 100%;
+
+	}
+
+	.sticky .topmenu{
+		list-style-type: none;
+		background-color: #333;
+		color: #efefef;
+		height: 50px;
+		padding: 0px;
+		margin: 0px 0px 1px 0px;
+		-webkit-transition:all 0.25s ease-in-out;
+		-moz-transition:all 0.25s ease-in-out;
+		-o-transition:all 0.25s ease-in-out;
+		transition:all 0.25s ease-in-out;
+		cursor: pointer;
+
+		/*
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+                filter: gray;
+                -webkit-filter: grayscale(100%);
+*/
+	}
+
+	.sticky .topmenu:hover{
+		background-color: #ff5f5f;
+		-webkit-filter: invert(0%);
+		        filter: invert(0%);
+	}
+
+	.sticky .topmenu:hover:nth-child(1) {
+		margin-left: -350px;
+	}
+
+	.sticky .topmenu:hover:nth-child(1) .active{
+		left: 350px;
+	}
+
+	.sticky .topmenu:hover:nth-child(2) {
+		margin-left: -100px;
+	}
+
+	.sticky .topmenu:hover:nth-child(2) .active {
+		left: 100px;
+	}
+
+	.sticky .topmenu:hover:nth-child(3) {
+		margin-left: -600px;
+	}
+
+	.sticky .topmenu:hover:nth-child(3) .active {
+		left: 600px;
+	}
+
+	.sticky .topmenu:hover:nth-child(4) {
+		margin-left: -500px;
+	}
+
+	.sticky .topmenu:hover:nth-child(4) .active {
+		left: 500px;
+	}
+
+	.sticky .topmenu:hover:nth-child(5) {
+		margin-left: 0px;
+	}
+
+	.sticky .topmenu:hover:nth-child(5) .active {
+		left: 0px;
+		top: 0px;
+	}
+
+	.sticky .topmenu:hover:nth-child(6) {
+		margin-left: -100px;
+	}
+
+	.sticky .topmenu:hover:nth-child(6) .active {
+		left: 100px;
+	}
+
+	.sticky .topmenu:hover:nth-child(7) {
+		margin-left: -100px;
+	}
+
+	.sticky .topmenu:hover:nth-child(7) .active {
+		left: 100px;
+	}
+
+
+	.sticky .topmenu .active{
+		position: relative;
+		margin: 4px;
+		z-index: 999;
+	}
+
+	.sticky .topmenu:hover .active{
+		background-color: #444;
+		top: -40px;
+	}
+
+	.sticky .topmenu img{
+		/*float: left;*/
+		/*margin: 5px 5px;*/
+		margin-right: 4px;
+		padding: 4px;
+		border: solid 1px black;
+		border-radius: 4px;
+		-webkit-filter: invert(100%);
+		        filter: invert(100%);
+	}
+
+	.sticky .topmenu p{
+		padding: 0px;
+		margin: 0px;
+		text-transform: uppercase;
+		line-height: 43px;
+	}
+
+    .sticky .topmenu ul {
+		display:none;
+		opacity: 100%;
+    }
+
+    .sticky .topmenu:hover > ul {
+		display:table-row;
+		opacity: 0%;
+		background-color: #ff5f5f;
+    }
+
+
+    .sticky .topmenu li {
+		list-style-type: none;
+		float: left;
+		height: 32px;
+		margin: 2px;
+		padding: 2px;
+	    font-family: 1.7em;
+		/*color: #fff;*/
+    }
+
+
+
+:-webkit-full-screen #main_content {
+  width: 100%;
+  height: 100%;
+}
+/*******************************************
+   Style menu for larger screens
+
+   Using 650px (130px each * 5 items), but ems
+   or other values could be used depending on other factors
+********************************************/
+
+@media screen and (min-width: 650px) {
+  nav li {
+    width: 130px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    display: inline-block;
+    margin-right: -4px;
+  }
+
+  nav a {
+    border-bottom: none;
+  }
+
+  .helpmenu {
+    float:right;
+    list-style-type:none;
+  }
+
+  nav > ul > li {
+    text-align: center;
+  }
+
+  nav > ul > li > a {
+    padding-left: 0;
+  }
+
+  /* Sub Menus */
+  nav li ul {
+    position: absolute;
+    display: none;
+    width: inherit;
+  }
+
+  nav li:hover ul {
+    display: block;
+  }
+
+  nav li ul li {
+    display: block;
+        height: 40px;
+    line-height: 40px;
+  }
+
+  /* Sub Sub Menus */
+
+  .submenu > a::after, .checkbox > a::after {
+    content: '\0025B8';
+    text-align: right;
+    float: right;
+    margin-right: 10px;
+  }
+
+  nav li:hover > ul > li > ul {
+    position: absolute;
+    display: none;
+    width: inherit;
+  }
+
+  nav li:hover > ul > li:hover > ul {
+    position:relative;
+    left: 100%;
+    top: -100%;
+    display: block;
+  }
+
+  /* Checkbox */
+
+  .checkbox_item > a::before {
+    content: '\02610';
+    margin-right: 10px;
+  }
+
+  .checked {
+      background-color: #ff5f5f;
+  }
+
+  .checked > a::before {
+    content: '\02713';
+    margin-right: 10px;
+
+  }
+
+  /* Separator */
+  nav .separator {
+    height: 0px;
+    border-bottom: solid 1px #ccc;
+  }
+}
+
+/************* Trucsweb.com ******************
+ *
+ * Window « Modal responsive » in pure CSS
+ * http://www.trucsweb.com/tutoriels/css/css-modal/
+ *
+ *********************************************/
+
+
+.mwModal .modal-dialog {
+  max-width: 600px;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+
+.mwModal .btn-primary {
+    border: solid 1px #000;
+    border-radius: 5px;
+    background-color: #444;
+    color:#fff;
+    cursor:pointer;
+    margin: 12px;
+    padding: 5px 15px 5px 15px;
+    line-height: 40px;
+    text-decoration:none;
+}
+
+.mwModal .btn-primary:hover {
+    background-color: #7d7d7d;
+}
+.mwModal .btn-close {
+    cursor:pointer;
+    float: right;
+}
+
+
+/***********************************
+ *
+ * Alert modal window
+ *
+ ***********************************/
+
+
+/***********************************
+ *
+ * Console
+ *
+ ***********************************/
+
+#console {
+  z-index: 2;
+}
+
+#console  form {
+    display: inline-block;
+}
+
+.slideout {
+/**
+  opacity:0.5;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  **/
+  background-color: rgba(68,68,68,0.5);
+  box-shadow: 0 0 5px rgba(0,0,0,.3);
+  color: #333;
+  float: right;
+  position: fixed;
+  top: 150px;
+  right: -620px;
+  width: 600px;
+  -webkit-transition: right 0.5s ease-in-out;
+  -moz-transition: right 0.5s ease-in-out;
+  -o-transition: right 0.5s ease-in-out;
+  transition: right 0.5s ease-in-out;
+}
+
+.slideout.on {
+  right: 0px;
+}
+
+.slideout input[type="text"] {
+  background: transparent;
+  outline: none;
+  width: 500px;
+  font-family: mono;
+  color: #fff;
+  border: none;
+  border-bottom: solid 1px white
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  align: center;
+  z-index: 1;
+}
