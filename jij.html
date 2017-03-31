@@ -1,0 +1,673 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jij.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/modal.css">
+    <title>JIJ - JavaScript ImageJ-like</title>
+    <script src="javascripts/tijapi.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="top_menu"><a href="#">File</a>
+            <ul>
+              <li class="submenu"><a href="#">New</a>
+                <ul>
+                  <li><a href="#">Image...[n]</a>
+                  </li>
+                  <li><a href="#">Hyperstack...</a>
+                  </li>
+                  <li><a href="#">Text Window[N]</a>
+                  </li>
+                  <li><a href="#">Internal Clipboard</a>
+                  </li>
+                  <li><a href="#">System Clipboard[V]</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Open...</a>
+              </li>
+              <li><a href="#">Open Next</a>
+              </li>
+              <li class="submenu"><a href="#">Open Samples</a>
+                <ul>
+                  <li><a href="#">AuPbSn 40 (56K)</a>
+                  </li>
+                  <li><a href="#">Bat Cochlea Volume (19K)</a>
+                  </li>
+                  <li><a href="#">Bat Cochlea Renderings (449K)</a>
+                  </li>
+                  <li><a href="#">Blobs (25K)[B]</a>
+                  </li>
+                  <li><a href="#">Boats (356K)</a>
+                  </li>
+                  <li><a href="#">Bridge (174K)</a>
+                  </li>
+                  <li><a href="#">Cardio (768K, RGB DICOM)</a>
+                  </li>
+                  <li><a href="#">Cell Colony (31K)</a>
+                  </li>
+                  <li><a href="#">Clown (14K)</a>
+                  </li>
+                  <li><a href="#">Confocal Series (2.2MB)</a>
+                  </li>
+                  <li><a href="#">CT (420K, 16-bit DICOM)</a>
+                  </li>
+                  <li><a href="#">Dot Blot (7K)</a>
+                  </li>
+                  <li><a href="#">Embryos (42K)</a>
+                  </li>
+                  <li><a href="#">Fluorescent Cells (400K)</a>
+                  </li>
+                  <li><a href="#">Fly Brain (1MB)</a>
+                  </li>
+                  <li><a href="#">Gel (105K)</a>
+                  </li>
+                  <li><a href="#">HeLa Cells (1.3M, 48-bit RGB)</a>
+                  </li>
+                  <li><a href="#">Leaf (36K)</a>
+                  </li>
+                  <li><a href="#">Lena (68K)</a>
+                  </li>
+                  <li><a href="#">Line Graph (21K)</a>
+                  </li>
+                  <li><a href="#">Mitosis (26MB, 5D stack)</a>
+                  </li>
+                  <li><a href="#">MRI Stack (528K)</a>
+                  </li>
+                  <li><a href="#">M51 Galaxy (177K, 16-bits)</a>
+                  </li>
+                  <li><a href="#">Neuron (1.6M, 5 channels)</a>
+                  </li>
+                  <li><a href="#">Nile Bend (1.9M)</a>
+                  </li>
+                  <li><a href="#">Organ of Corti (2.8M, 4D stack)</a>
+                  </li>
+                  <li><a href="#">Particles (75K)</a>
+                  </li>
+                  <li><a href="#">T1 Head (2.4M, 16-bits)</a>
+                  </li>
+                  <li><a href="#">T1 Head Renderings (736K)</a>
+                  </li>
+                  <li><a href="#">TEM Filter (112K)</a>
+                  </li>
+                  <li><a href="#">Tree Rings (48K)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li class="submenu"><a href="#">Import</a>
+                <ul>
+                  <li><a href="#">Image Sequence...</a>
+                  </li>
+                  <li><a href="#">Raw...</a>
+                  </li>
+                  <li><a href="#">LUT... </a>
+                  </li>
+                  <li><a href="#">Text Image... </a>
+                  </li>
+                  <li><a href="#">Text File... </a>
+                  </li>
+                  <li><a href="#">Results... </a>
+                  </li>
+                  <li><a href="#">URL...</a>
+                  </li>
+                  <li><a href="#">Stack From List...</a>
+                  </li>
+                  <li><a href="#">TIFF Virtual Stack...</a>
+                  </li>
+                  <li><a href="#">AVI...</a>
+                  </li>
+                  <li><a href="#">XY Coordinates... </a>
+                  </li>
+                  <li><a href="#">TWAIN...</a>
+                  </li>
+                  <li><a href="#">Capture Video...</a>
+                  </li>
+                  <li><a href="#">QuickTime Movie...</a>
+                  </li>
+                  <li><a href="#">Pict...</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Close</a>
+              </li>
+              <li><a href="#">Close All</a>
+              </li>
+              <li><a href="#">Save</a>
+              </li>
+              <li class="submenu"><a href="#">Save As</a>
+                <ul>
+                  <li><a href="#">Tiff...</a>
+                  </li>
+                  <li><a href="#">Gif...</a>
+                  </li>
+                  <li><a href="#">Jpeg...</a>
+                  </li>
+                  <li><a href="#">Text Image...</a>
+                  </li>
+                  <li><a href="#">ZIP...</a>
+                  </li>
+                  <li><a href="#">Raw Data...</a>
+                  </li>
+                  <li><a href="#">Image Sequence... </a>
+                  </li>
+                  <li><a href="#">AVI... </a>
+                  </li>
+                  <li><a href="#">BMP...</a>
+                  </li>
+                  <li><a href="#">PNG...</a>
+                  </li>
+                  <li><a href="#">PGM...</a>
+                  </li>
+                  <li><a href="#">FITS...</a>
+                  </li>
+                  <li><a href="#">LUT...</a>
+                  </li>
+                  <li><a href="#">Selection...</a>
+                  </li>
+                  <li><a href="#">XY Coordinates...</a>
+                  </li>
+                  <li><a href="#">Results...</a>
+                  </li>
+                  <li><a href="#">Text...</a>
+                  </li>
+                  <li><a href="#">QuickTime Movie... </a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Revert</a>
+              </li>
+              <li><a href="#">Print...</a>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Quit</a>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu"><a href="#">Edit</a>
+            <ul>
+              <li><a href="#">Undo</a>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Cut</a>
+              </li>
+              <li><a href="#">Copy</a>
+              </li>
+              <li><a href="#">Copy to System</a>
+              </li>
+              <li><a href="#">Paste</a>
+              </li>
+              <li><a href="#">Paste Control...</a>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Clear</a>
+              </li>
+              <li><a href="#">Clear Outside</a>
+              </li>
+              <li><a href="#">Fill</a>
+              </li>
+              <li><a href="#">Draw</a>
+              </li>
+              <li><a href="#">Invert</a>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li class="submenu"><a href="#">Selection</a>
+                <ul>
+                  <li><a href="#">Select All[a]</a>
+                  </li>
+                  <li><a href="#">Select None[A]</a>
+                  </li>
+                  <li><a href="#">Restore Selection[E]</a>
+                  </li>
+                  <li><a href="#">Fit Spline</a>
+                  </li>
+                  <li><a href="#">Fit Circle</a>
+                  </li>
+                  <li><a href="#">Fit Ellipse</a>
+                  </li>
+                  <li><a href="#">Interpolate</a>
+                  </li>
+                  <li><a href="#">Convex Hull</a>
+                  </li>
+                  <li><a href="#">Make Inverse</a>
+                  </li>
+                  <li><a href="#">Create Selection</a>
+                  </li>
+                  <li><a href="#">Create Mask</a>
+                  </li>
+                  <li><a href="#">Properties... [y]</a>
+                  </li>
+                  <li><a href="#">Rotate...</a>
+                  </li>
+                  <li><a href="#">Enlarge...</a>
+                  </li>
+                  <li><a href="#">Make Band...</a>
+                  </li>
+                  <li><a href="#">Specify...</a>
+                  </li>
+                  <li><a href="#">Straighten...</a>
+                  </li>
+                  <li><a href="#">To Bounding Box</a>
+                  </li>
+                  <li><a href="#">Line to Area</a>
+                  </li>
+                  <li><a href="#">Area to Line</a>
+                  </li>
+                  <li><a href="#">Image to Selection...</a>
+                  </li>
+                  <li><a href="#">Add to Manager[t]</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="submenu"><a href="#">Options</a>
+                <ul>
+                  <li><a href="#">Line Width...</a>
+                  </li>
+                  <li><a href="#">Input/Output...</a>
+                  </li>
+                  <li><a href="#">Fonts...</a>
+                  </li>
+                  <li><a href="#">Profile Plot Options...</a>
+                  </li>
+                  <li><a href="#">Rounded Rect Tool...</a>
+                  </li>
+                  <li><a href="#">Arrow Tool...</a>
+                  </li>
+                  <li><a href="#">Point Tool...</a>
+                  </li>
+                  <li><a href="#">Wand Tool...</a>
+                  </li>
+                  <li><a href="#">Colors...</a>
+                  </li>
+                  <li><a href="#">Appearance...</a>
+                  </li>
+                  <li><a href="#">Conversions...</a>
+                  </li>
+                  <li><a href="#">Memory &amp; Threads...</a>
+                  </li>
+                  <li><a href="#">Proxy Settings...</a>
+                  </li>
+                  <li><a href="#">Compiler...</a>
+                  </li>
+                  <li><a href="#">DICOM...</a>
+                  </li>
+                  <li><a href="#">Misc...</a>
+                  </li>
+                  <li><a href="#">Reset... </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu"><a href="#">Image</a>
+            <ul>
+              <li class="submenu"><a href="#">Type</a>
+                <ul>
+                  <li><a href="#">8-bit</a>
+                  </li>
+                  <li><a href="#">16-bit</a>
+                  </li>
+                  <li><a href="#">32-bit</a>
+                  </li>
+                  <li><a href="#">8-bit Color</a>
+                  </li>
+                  <li><a href="#">RGB Color</a>
+                  </li>
+                  <li class="separator"><a href="#">---</a>
+                  </li>
+                  <li><a href="#">RGB Stack</a>
+                  </li>
+                  <li><a href="#">HSB Stack</a>
+                  </li>
+                  <li><a href="#">Lab Stack</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li class="submenu"><a href="#">Adjust</a>
+                <ul>
+                  <li><a href="#">Brightness/Contrast...[C]</a>
+                  </li>
+                  <li><a href="#">Window/Level...</a>
+                  </li>
+                  <li><a href="#">Color Balance...</a>
+                  </li>
+                  <li><a href="#">Threshold...[T]</a>
+                  </li>
+                  <li><a href="#">Color Threshold...</a>
+                  </li>
+                  <li><a href="#">Size...</a>
+                  </li>
+                  <li><a href="#">Canvas Size...</a>
+                  </li>
+                  <li><a href="#">Line Width... </a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Show Info...</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="#">Properties...</a>
+                <ul>
+                </ul>
+              </li>
+              <li class="submenu"><a href="#">Color</a>
+                <ul>
+                  <li><a href="#">Split Channels</a>
+                  </li>
+                  <li><a href="#">Merge Channels...</a>
+                  </li>
+                  <li><a href="#">Arrange Channels...</a>
+                  </li>
+                  <li><a href="#">Stack to RGB</a>
+                  </li>
+                  <li><a href="#">Make Composite</a>
+                  </li>
+                  <li><a href="#">Show LUT</a>
+                  </li>
+                  <li><a href="#">Edit LUT...</a>
+                  </li>
+                  <li><a href="#">Color Picker...[K]</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="submenu"><a href="#">Stacks</a>
+                <ul>
+                  <li><a href="#">Split Channels</a>
+                  </li>
+                  <li><a href="#">Merge Channels...</a>
+                  </li>
+                  <li><a href="#">Arrange Channels...</a>
+                  </li>
+                  <li><a href="#">Channels Tool...[Z]</a>
+                  </li>
+                  <li><a href="#">Stack to RGB</a>
+                  </li>
+                  <li><a href="#">Make Composite</a>
+                  </li>
+                  <li><a href="#">Show LUT</a>
+                  </li>
+                  <li><a href="#">Edit LUT...</a>
+                  </li>
+                  <li><a href="#">Color Picker...[K]</a>
+                  </li>
+                  <li><a href="#">Animation_</a>
+                    <ul>
+                      <li><a href="#">Start Animation [\]</a>
+                      </li>
+                      <li><a href="#">Stop Animation</a>
+                      </li>
+                      <li><a href="#">Animation Options...</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Tools_</a>
+                    <ul>
+                      <li><a href="#">Combine...</a>
+                      </li>
+                      <li><a href="#">Concatenate...</a>
+                      </li>
+                      <li><a href="#">Reduce...</a>
+                      </li>
+                      <li><a href="#">Reverse</a>
+                      </li>
+                      <li><a href="#">Insert...</a>
+                      </li>
+                      <li><a href="#">Montage to Stack...</a>
+                      </li>
+                      <li><a href="#">Make Substack...</a>
+                      </li>
+                      <li><a href="#">Grouped Z Project...</a>
+                      </li>
+                      <li><a href="#">Remove Slice Labels</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Hyperstacks</a>
+                <ul>
+                </ul>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Crop</a>
+              </li>
+              <li><a href="#">Duplicate...</a>
+              </li>
+              <li><a href="#">Rename...</a>
+              </li>
+              <li><a href="#">Scale...</a>
+              </li>
+              <li><a href="#">Transform</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="#">Zoom</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="#">Overlay</a>
+                <ul>
+                </ul>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Lookup Tables</a>
+                <ul>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu"><a href="#">Process</a>
+            <ul>
+              <li><a href="#">Smooth</a>
+              </li>
+              <li><a href="#">Sharpen</a>
+              </li>
+              <li><a href="#">Find Edges</a>
+              </li>
+              <li><a href="#">Find Maxima...</a>
+              </li>
+              <li><a href="#">Enhance Contrast...</a>
+              </li>
+              <li><a href="#">Noise</a>
+              </li>
+              <li><a href="#">Shadows</a>
+              </li>
+              <li><a href="#">Binary</a>
+              </li>
+              <li><a href="#">Math</a>
+              </li>
+              <li><a href="#">FFT</a>
+              </li>
+              <li><a href="#">Filters</a>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Batch</a>
+              </li>
+              <li><a href="#">Image Calculator...</a>
+              </li>
+              <li><a href="#">Subtract Background...</a>
+              </li>
+              <li><a href="#">Repeat Command</a>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu"><a href="#">Analyze</a>
+            <ul>
+              <li><a href="#">Measure</a>
+              </li>
+              <li><a href="#">Analyze Particles...</a>
+              </li>
+              <li><a href="#">Summarize</a>
+              </li>
+              <li><a href="#">Distribution...</a>
+              </li>
+              <li><a href="#">Label</a>
+              </li>
+              <li><a href="#">Clear Results</a>
+              </li>
+              <li><a href="#">Set Measurements...</a>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Set Scale...</a>
+              </li>
+              <li><a href="#">Calibrate...</a>
+              </li>
+              <li><a href="#">Histogram</a>
+              </li>
+              <li><a href="#">Plot Profile</a>
+              </li>
+              <li><a href="#">Surface Plot...</a>
+              </li>
+              <li><a href="#">Gels</a>
+              </li>
+              <li><a href="#">Tools</a>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu"><a href="#">Plugins</a>
+            <ul>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Input/Output</a>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu"><a href="#">Window</a>
+            <ul>
+              <li><a href="#">Show All</a>
+              </li>
+              <li><a href="#">Main Window [{{key}}]</a>
+              </li>
+              <li><a href="#">Put Behind [tab]</a>
+              </li>
+              <li><a href="#">Cascade</a>
+              </li>
+              <li><a href="#">Tile</a>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu"><a href="#">Help</a>
+            <ul>
+              <li><a href="#">ImageJ Website...</a>
+              </li>
+              <li><a href="#">ImageJ News...</a>
+              </li>
+              <li><a href="#">Documentation...</a>
+              </li>
+              <li><a href="#">Installation...</a>
+              </li>
+              <li><a href="#">Mailing List...</a>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Dev. Resources...</a>
+              </li>
+              <li><a href="#">Plugins...</a>
+              </li>
+              <li><a href="#">Macros...</a>
+              </li>
+              <li><a href="#">Macro Functions...</a>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">Update ImageJ...</a>
+              </li>
+              <li><a href="#">Refresh Menus</a>
+              </li>
+              <li class="separator"><a href="#">---</a>
+              </li>
+              <li><a href="#">About Plugins</a>
+              </li>
+              <li><a href="#">About ImageJ...</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- MAIN CONTENT -->
+    <section id="main_content" class="inner">
+      <!-- http://www.html5rocks.com/en/tutorials/casestudies/gopherwoord-studios-resizing-html5-games/ -->
+      <canvas id="mowgli"></canvas>
+      <!-- GUI Console -->
+      <div id="console" style="padding: 10px; height: 60%" class="slideout">
+        <header><a href="#close" title="Close modal window" class="droite">&#10060;</a>
+          <p>Console version 0.1</p>
+        </header>
+        <div id="display"></div>
+        <div id="enter" style="position: absolute; bottom: 10px;width: inherit">
+          <label style="font-family: monospace;color: #fff;">JIJ</label>
+          <form>
+            <input type="text">
+            <input type="submit" name="go" value="Submit" style="display:none;">
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Sidebar-->
+    <section class="sticky-container">
+      <!--+toolbar_item(sidebar)-->
+    </section>
+    <!-- Modal window-->
+    <section id="modal" class="mwModal">
+      <input id="modal-one" type="checkbox" hidden class="modal-open">
+      <div aria-hidden="true" role="dialog" class="modal-wrap">
+        <label for="modal-one" class="modal-overlay"></label>
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <label for="modal-one" aria-hidden="true" class="btn-close">&#10060;</label>
+            <h2> </h2>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <label for="modal-one" class="btn btn-primary">OK</label>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Alert window-->
+    <section class="alert">
+      <input id="modal-alert" type="checkbox" hidden class="modal-open">
+      <div aria-hidden="true" role="dialog" class="modal-wrap">
+        <label for="modal-alert" class="modal-overlay"></label>
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <label for="modal-alert" aria-hidden="true" class="btn-close">&#10060;</label>
+            <h2> </h2>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <label for="modal-alert" class="btn btn-primary">OK</label>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer>
+      <label for="threshold">Threshold</label>
+      <input type="range" min="0" max="255">
+    </footer>
+  </body>
+</html>
