@@ -1,0 +1,105 @@
+  
+mixin menu_item(menu)
+    if menu.children
+        ul
+            each item in menu.children
+                li(id=item.id, class=item.type)
+                    if item.type=="link"
+                         a(href=item.href,target="_blank")=item.title
+                    else if item.type == "checkbox_item" || item.type == "checked"
+                        a(href="#",data-value=item.value)=item.title
+                    else
+                        a(href="#")=item.title
+                    +menu_item(item)
+
+mixin toolbar_item(menu)
+    if menu.children
+        if menu.type == "topmenu"
+            ul
+                each item in menu.children
+                    li(id=item.id, class=item.type,title=item.title)
+                        if item.type=="item"
+                             a(href="#")
+                                img(src='images/svg/' + item.img,width=32,height=32)
+                        +toolbar_item(item)
+            img.active(src='images/svg/' + menu.img,width=32,height=32)
+        else
+            ul(class=menu.type)
+                each item in menu.children
+                    li(id=item.id, class=item.type,title=item.title)
+                        if item.type=="item"
+                             a(href="#")
+                                img(src='images/svg/' + item.img,width=32,height=32)
+                        +toolbar_item(item)
+
+
+
+
+doctype html
+html
+    head
+        meta(charset="utf8")
+        meta(name="viewport",content="width=device-width, initial-scale=1, user-scalable=no")
+        link(href='https://fonts.googleapis.com/css?family=Oswald', rel='stylesheet' type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic',rel='stylesheet' type='text/css')
+        link(rel="stylesheet", type="text/css", media="screen", href="stylesheets/jij.css")
+        link(rel="stylesheet", type="text/css", media="screen", href="stylesheets/modal.css")
+
+        title JIJ - JavaScript ImageJ-like
+
+        script(src="javascripts/tijapi.js")
+
+    body
+        header
+            nav
+                +menu_item(navbar)
+        // MAIN CONTENT 
+        section#main_content.inner
+            // http://www.html5rocks.com/en/tutorials/casestudies/gopherwoord-studios-resizing-html5-games/ 
+            canvas#mowgli
+            // GUI Console 
+            div#console.slideout(style="padding: 10px; height: 60%")
+                header
+                    a.droite(href="#close", title="Close modal window") &#10060;
+                    p Console version 0.1
+                div#display
+                div#enter(style="position: absolute; bottom: 10px;width: inherit")
+                    label(style="font-family: monospace;color: #fff;") JIJ
+                    form
+                        input(type="text")
+                        input(type="submit", name="go", value="Submit", style="display:none;")
+        // Sidebar
+        section.sticky-container
+            //+toolbar_item(sidebar)
+            
+        // Modal window
+        section#modal.mwModal
+            input.modal-open#modal-one(type="checkbox",hidden)
+            div.modal-wrap(aria-hidden="true", role="dialog")
+                label.modal-overlay(for="modal-one")
+                div.modal-dialog
+                    div.modal-header
+                        label.btn-close(for="modal-one", aria-hidden="true") &#10060;
+                        h2 
+                    div.modal-body
+                    div.modal-footer
+                        label.btn.btn-primary(for="modal-one") OK
+
+
+        // Alert window
+        section.alert
+            input.modal-open#modal-alert(type="checkbox",hidden)
+            div.modal-wrap(aria-hidden="true", role="dialog")
+                label.modal-overlay(for="modal-alert")
+                div.modal-dialog
+                    div.modal-header
+                        label.btn-close(for="modal-alert", aria-hidden="true") &#10060;
+                        h2 
+                    div.modal-body
+                    div.modal-footer
+                        label.btn.btn-primary(for="modal-alert") OK
+
+        // Footer
+        footer
+            label(for="threshold") Threshold
+            input(type="range","min"=0,"max"=255)
