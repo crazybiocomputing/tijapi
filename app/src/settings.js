@@ -1200,8 +1200,9 @@ var ijclasses = [
     "url": "./api/ij/gui/PlotCanvas.html"
   }, 
   {
-    "process": 0, 
+    "process": 2, 
     "url": "./api/ij/gui/Plot.html"
+	"author": "al"
   }, 
   {
     "process": 0, 
