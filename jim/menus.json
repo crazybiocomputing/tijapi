@@ -213,7 +213,7 @@
             ]
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined"
           },
@@ -284,7 +284,7 @@
             ]
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -395,7 +395,7 @@
             "shortcut": "KeyEvent.VK_P"
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -418,7 +418,7 @@
             "shortcut": "KeyEvent.VK_Z"
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -449,7 +449,7 @@
             "shortcut": 0
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -480,7 +480,7 @@
             "shortcut":  "KeyEvent.VK_I"
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -689,7 +689,7 @@
                 "type" : "checkbox_item"
               },
               {
-                "title": "---",
+                "title": "",
                 "type": "separator",
                 "code": "undefined",
                 "comment": "this is a separator"
@@ -712,7 +712,7 @@
             ]
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -874,43 +874,8 @@
             "type": "submenu",
             "children": [
               {
-                "title": "Split Channels",
-                "code": "ij.plugin.ChannelSplitter()"
-              },
-              {
-                "title": "Merge Channels...",
-                "code": "ij.plugin.RGBStackMerge()"
-              },
-              {
-                "title": "Arrange Channels...",
-                "code": "ij.plugin.ChannelArranger()"
-              },
-              {
-                "title": "Channels Tool...[Z]",
-                "code": "ij.plugin.frame.Channels()"
-              },
-              {
-                "title": "Stack to RGB",
-                "code": "ij.plugin.RGBStackConverter()"
-              },
-              {
-                "title": "Make Composite",
-                "code": "ij.plugin.CompositeConverter()"
-              },
-              {
-                "title": "Show LUT",
-                "code": "ij.plugin.filter.LutViewer()"
-              },
-              {
-                "title": "Edit LUT...",
-                "code": "ij.plugin.LUT_Editor()"
-              },
-              {
-                "title": "Color Picker...[K]",
-                "code": "ij.plugin.frame.ColorPicker()"
-              },
-              {
                 "title": "Animation_",
+                "type": "submenu",
                 "children": [
                   {
                     "title": "Start Animation [\\]",
@@ -928,6 +893,7 @@
               },
               {
                 "title": "Tools_",
+                "type": "submenu",
                 "children": [
                   {
                     "title": "Combine...",
@@ -976,7 +942,7 @@
             ]
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -1003,30 +969,33 @@
           },
           {
             "title": "Transform",
+            "type": "submenu",
             "children":[
 
             ]
           },
           {
             "title": "Zoom",
+            "type": "submenu",
             "children":[
 
             ]
           },
           {
             "title": "Overlay",
+            "type": "submenu",
             "children":[
 
             ]
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
-            "code": "undefined",
             "comment": "this is a separator"
           },
           {
             "title": "Lookup Tables",
+            "type": "submenu",
             "children":[
 
             ]
@@ -1050,7 +1019,18 @@
           {
             "title": "Find Edges",
             "code": "ij.plugin.filter.Filters(\"edge\")",
-            "shortcut": 0
+            "type": "submenu",
+            "children": [
+              {
+                "title": "Laplace"
+              },
+              {
+                "title": "Sobel"
+              },
+              {
+                "title": "Canny"
+              }
+            ]
           },
           {
             "title": "Find Maxima...",
@@ -1063,25 +1043,49 @@
             "shortcut": 0
           },
           {
-            "title": "Noise"
+            "title": "Noise",
+            "type": "submenu",
+            "children": [
+
+            ]
           },
           {
-            "title": "Shadows"
+            "title": "Shadows",
+            "type": "submenu",
+            "children": [
+
+            ]
           },
           {
-            "title": "Binary"
+            "title": "Binary",
+            "type": "submenu",
+            "children": [
+
+            ]
           },
           {
-            "title": "Math"
+            "title": "Math",
+            "type": "submenu",
+            "children": [
+
+            ]
           },
           {
-            "title": "FFT"
+            "title": "FFT",
+            "type": "submenu",
+            "children": [
+
+            ]
           },
           {
-            "title": "Filters"
+            "title": "Filters",
+            "type": "submenu",
+            "children": [
+
+            ]
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -1145,7 +1149,7 @@
             "shortcut": 0
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -1188,7 +1192,7 @@
         "type" : "top_menu",
         "children": [
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -1230,7 +1234,7 @@
             "shortcut": 0
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -1267,7 +1271,7 @@
             "shortcut": 0
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -1293,7 +1297,7 @@
             "shortcut": 0
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
@@ -1309,7 +1313,7 @@
             "shortcut": 0
           },
           {
-            "title": "---",
+            "title": "",
             "type": "separator",
             "code": "undefined",
             "comment": "this is a separator"
