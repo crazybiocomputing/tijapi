@@ -48,7 +48,7 @@
                       "type": "input_number",
                       "label": "Slices",
                       "value": 1
-                    },
+                    }
                   ]
                 }
               },
@@ -666,27 +666,27 @@
               {
                 "title": "8-bit",
                 "code": "ij.plugin.Converter(\"8-bit\")",
-                "widget" : "checkbox"
+                "type" : "checkbox_item"
               },
               {
                 "title": "16-bit",
                 "code": "ij.plugin.Converter(\"16-bit\")",
-                "widget" : "checkbox"
+                "type" : "checkbox_item"
               },
               {
                 "title": "32-bit",
                 "code": "ij.plugin.Converter(\"32-bit\")",
-                "widget" : "checkbox"
+                "type" : "checkbox_item"
               },
               {
                 "title": "8-bit Color",
                 "code": "ij.plugin.Converter(\"8-bit Color\")",
-                "widget" : "checkbox"
+                "type" : "checkbox_item"
               },
               {
                 "title": "RGB Color",
                 "code": "ij.plugin.Converter(\"RGB Color\")",
-                "widget" : "checkbox"
+                "type" : "checkbox_item"
               },
               {
                 "title": "---",
@@ -697,17 +697,17 @@
               {
                 "title": "RGB Stack",
                 "code": "ij.plugin.Converter(\"RGB Stack\")",
-                "widget" : "checkbox"
+                "type" : "checkbox_item"
               },
               {
                 "title":  "HSB Stack",
                 "code": "ij.plugin.Converter(\"HSB Stack\")",
-                "widget" : "checkbox"
+                "type" : "checkbox_item"
               },
               {
                 "title": "Lab Stack",
                 "code": "ij.plugin.Converter(\"Lab Stack\")",
-                "widget" : "checkbox"
+                "type" : "checkbox_item"
               }
             ]
           },
@@ -722,8 +722,68 @@
             "type": "submenu",
             "children": [
               {
-                "title": "Brightness/Contrast...[C]",
-                "code": "ij.plugin.frame.ContrastAdjuster()"
+                "title": "Brightness/Contrast...",
+                "shortcut" : ["ctrl", "shift", "c"],
+                "code": "ij.plugin.frame.ContrastAdjuster()",
+                "ui" : {
+                  "legend":  "B&C",
+                  "fieldset": [
+                    {
+                      "type": "graph"
+                    },
+                    {
+                      "type": "input_range",
+                      "label": "Minimum",
+                      "min":0,
+                      "max":255,
+                      "value": 0
+                    },
+                    {
+                      "type": "input_range",
+                      "label": "Maximum",
+                      "min":0,
+                      "max":255,
+                      "value": 0
+                    },
+                    {
+                      "type": "input_range",
+                      "label": "Brightness",
+                      "min":0,
+                      "max":255,
+                      "value": 0
+                    },
+                    {
+                      "type": "input_range",
+                      "label": "Contrast",
+                      "min":0,
+                      "max":255,
+                      "value": 0
+                    },
+                    {
+                      "type": "row",
+                      "children": [
+                        {
+                          "type": "button",
+                          "label": "Auto"
+                        },
+                        {
+                          "type": "button",
+                          "label": "Reset"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "button",
+                      "label": "Set",
+                      "value": "submit"
+                    },
+                    {
+                      "type": "button",
+                      "label": "Apply",
+                      "value": "submit"
+                    }
+                  ]
+                }
               },
               {
                 "title": "Window/Level...",

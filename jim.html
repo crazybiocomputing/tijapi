@@ -7,7 +7,7 @@
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jim.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/modal.css">
-    <title>JIJ - JavaScript ImageJ-like</title>
+    <title>JIM - JavaScript ImageJ-like</title>
     <script src="javascripts/tijapi.js"></script>
   </head>
   <body>
@@ -18,15 +18,15 @@
             <ul>
               <li class="submenu"><a href="#">New</a>
                 <ul>
-                  <li><a href="#">Image...[n]</a>
+                  <li><a href="#">Image...</a>
                   </li>
                   <li><a href="#">Hyperstack...</a>
                   </li>
-                  <li><a href="#">Text Window[N]</a>
+                  <li><a href="#">Text Window</a>
                   </li>
                   <li><a href="#">Internal Clipboard</a>
                   </li>
-                  <li><a href="#">System Clipboard[V]</a>
+                  <li><a href="#">System Clipboard</a>
                   </li>
                 </ul>
               </li>
@@ -316,23 +316,23 @@
             <ul>
               <li class="submenu"><a href="#">Type</a>
                 <ul>
-                  <li><a href="#">8-bit</a>
+                  <li class="checkbox_item"><a href="#">8-bit</a>
                   </li>
-                  <li><a href="#">16-bit</a>
+                  <li class="checkbox_item"><a href="#">16-bit</a>
                   </li>
-                  <li><a href="#">32-bit</a>
+                  <li class="checkbox_item"><a href="#">32-bit</a>
                   </li>
-                  <li><a href="#">8-bit Color</a>
+                  <li class="checkbox_item"><a href="#">8-bit Color</a>
                   </li>
-                  <li><a href="#">RGB Color</a>
+                  <li class="checkbox_item"><a href="#">RGB Color</a>
                   </li>
                   <li class="separator"><a href="#">---</a>
                   </li>
-                  <li><a href="#">RGB Stack</a>
+                  <li class="checkbox_item"><a href="#">RGB Stack</a>
                   </li>
-                  <li><a href="#">HSB Stack</a>
+                  <li class="checkbox_item"><a href="#">HSB Stack</a>
                   </li>
-                  <li><a href="#">Lab Stack</a>
+                  <li class="checkbox_item"><a href="#">Lab Stack</a>
                   </li>
                 </ul>
               </li>
@@ -340,7 +340,7 @@
               </li>
               <li class="submenu"><a href="#">Adjust</a>
                 <ul>
-                  <li><a href="#">Brightness/Contrast...[C]</a>
+                  <li><a href="#">Brightness/Contrast...</a>
                   </li>
                   <li><a href="#">Window/Level...</a>
                   </li>
@@ -631,7 +631,7 @@
       <!--+toolbar_item(sidebar)-->
     </section>
     <!-- Modal window-->
-    <section id="modal" class="mwModal">
+    <section id="modal" class="jimModal">
       <input id="modal-one" type="checkbox" hidden class="modal-open">
       <div aria-hidden="true" role="dialog" class="modal-wrap">
         <label for="modal-one" class="modal-overlay"></label>
