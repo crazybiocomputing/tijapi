@@ -1202,6 +1202,7 @@ var ijclasses = [
   {
     "process": 2,
     "url": "./api/ij/gui/Plot.html"
+	"author": "al"
   },
   {
     "process": 0,
