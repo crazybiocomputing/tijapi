@@ -11,15 +11,54 @@
             "type": "submenu",
             "children":[
               {
-                "title": "Image...[n]",
-                "code": "ij.plugin.Commands('new')"
+                "title": "Image...",
+                "shortcut":["ctrl","n"],
+                "code": "ij.plugin.Commands('new')",
+                "ui": {
+                  "legend": "New Image...",
+                  "fieldset" : [
+                    {
+                      "type": "input_text",
+                      "label": "Name",
+                      "value": "Untitled"
+                    },
+                    {
+                      "type": "select",
+                      "label": "Type",
+                      "value": ["8-bit","16-bit","32-bit","RGB"]
+                    },
+                    {
+                      "type": "select",
+                      "label": "Fill with",
+                      "value": ["Black","White", "Ramp", "Random","Chessboard"]
+                    },
+                    {
+                      "type": "input_number",
+                      "label": "Width",
+                      "value": 128,
+                      "suffix": "pixels"
+                    },
+                    {
+                      "type": "input_number",
+                      "label": "Height",
+                      "value": 128,
+                      "suffix": "pixels"
+                    },
+                    {
+                      "type": "input_number",
+                      "label": "Slices",
+                      "value": 1
+                    },
+                  ]
+                }
               },
               {
                 "title": "Hyperstack...",
                 "code":"ij.plugin.HyperStackConverter('new')"
               },
               {
-                "title":"Text Window[N]",
+                "title":"Text Window",
+                "shortcut":["ctrl","shift","n"],
                 "code" :"ij.plugin.NewPlugin('text')"
               },
               {
@@ -27,7 +66,8 @@
                 "code" :"ij.plugin.Clipboard('show')"
               },
               {
-                "title":"System Clipboard[V]",
+                "title":"System Clipboard",
+                "shortcut":["ctrl","v"],
                 "code" :"ij.plugin.Clipboard('showsys')"
               }
             ]
@@ -35,12 +75,12 @@
           {
             "title": "Open...",
             "code": "ij.plugin.Commands(\"open\")",
-            "shortcut": "KeyEvent.VK_O"
+            "shortcut": ["ctrl","o"]
           },
           {
             "title": "Open Next",
             "code": "ij.plugin.NextImageOpener",
-            "shortcut": "KeyEvent.VK_O"
+            "shortcut": ["ctrl","shift","o"]
           },
           {
             "title" : "Open Samples",
@@ -54,7 +94,6 @@
                 "title":"Bat Cochlea Volume (19K)",
                 "code" :"ij.plugin.URLOpener('bat-cochlea-volume.zip')"
               },
-
               {
                 "title":"Bat Cochlea Renderings (449K)",
                 "code" :"ij.plugin.URLOpener('bat-cochlea-renderings.zip')"
