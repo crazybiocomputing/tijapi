@@ -1,0 +1,126 @@
+{
+  "new_image":
+  {
+  "id" : "new_image",
+  "legend": "New Image...",
+  "fieldset" : [
+      {
+        "type": "input_text",
+        "label": "Name",
+        "value": "Untitled"
+      },
+      {
+        "type": "select",
+        "label": "Type",
+        "value": ["8-bit","16-bit","32-bit","RGB"]
+      },
+      {
+        "type": "select",
+        "label": "Fill with",
+        "value": ["Black","White", "Ramp", "Random","Chessboard"]
+      },
+      {
+        "type": "input_number",
+        "label": "Width",
+        "value": 128,
+        "suffix": "pixels"
+      },
+      {
+        "type": "input_number",
+        "label": "Height",
+        "value": 128,
+        "suffix": "pixels"
+      },
+      {
+        "type": "input_number",
+        "label": "Slices",
+        "value": 1
+      }
+    ]
+  },
+  "b_and_c":
+  {
+    "id": "b_and_c",
+    "legend":  "B&C",
+    "fieldset": [
+      {
+        "type": "graph"
+      },
+      {
+        "type": "input_range",
+        "label": "Minimum",
+        "min":0,
+        "max":255,
+        "value": 0
+      },
+      {
+        "type": "input_range",
+        "label": "Maximum",
+        "min":0,
+        "max":255,
+        "value": 0
+      },
+      {
+        "type": "input_range",
+        "label": "Brightness",
+        "min":0,
+        "max":255,
+        "value": 0
+      },
+      {
+        "type": "input_range",
+        "label": "Contrast",
+        "min":0,
+        "max":255,
+        "value": 0
+      },
+      {
+        "type": "row",
+        "children": [
+          {
+            "type": "button",
+            "label": "Auto"
+          },
+          {
+            "type": "button",
+            "label": "Reset"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "label": "Set",
+        "value": "submit"
+      },
+      {
+        "type": "button",
+        "label": "Apply",
+        "value": "submit"
+      }
+    ]
+  },
+  "filter": {
+    "id": "filter",
+    "legend": "{{title}}",
+    "fieldset": [
+      {
+        "type"  : "input_number",
+        "label" : "Radius",
+        "value" : 2.0,
+        "suffix": "pixels"
+      },
+      {
+        "type": "checkbox",
+        "label": "Previous"
+      },
+      {
+        "type": "button",
+        "label": "OK"
+      },
+      {
+        "type": "button",
+        "label": "Cancel"
+      }
+    ]
+  }
+}
