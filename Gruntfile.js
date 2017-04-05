@@ -12,9 +12,13 @@ module.exports = function(grunt) {
       }
     },
     concat: {
-      dist: {
+      tijapi : {
         src: ['src/**/*.js','nodejs/exports.js'],
         dest: 'javascripts/<%= pkg.name %>.js'
+      },
+      jim : {
+        src:  'jim/src/**/*.js',
+        dest: 'javascripts/jim.js'
       }
     },
     jade: {
@@ -23,11 +27,11 @@ module.exports = function(grunt) {
           pretty: true,
           data : function(dest, src) {
             // Return an object of data to pass to templates
-            return require('./jij/menus.json');
+            return require('./jim/json/menus.json');
           }
         },
         files: {
-          './jij.html': './jij/jade/jij.jade'
+          './jim.html': './jim/jade/jim.jade'
         }
       }
     },
@@ -78,12 +82,13 @@ jsdoc : {
 // These plugins provide necessary tasks.
 grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-jade');
+grunt.loadNpmTasks('grunt-contrib-jade');
 grunt.loadNpmTasks('grunt-jsdoc');
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-traceur');
 
 // Default and other tasks.
-grunt.registerTask('default',['concat','traceur','uglify']);
+grunt.registerTask('default',['concat:tijapi','traceur','uglify']);
+grunt.registerTask('jim',['jade','concat:jim']);
 
 };
