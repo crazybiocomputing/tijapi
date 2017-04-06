@@ -11,6 +11,7 @@
             "type": "submenu",
             "children":[
               {
+                "id": "new_image",
                 "title": "Image...",
                 "shortcut":["ctrl","n"],
                 "code": "ij.plugin.Commands('new')",
@@ -43,14 +44,16 @@
           },
           {
             "title": "Open Next",
-            "code": "ij.plugin.NextImageOpener",
-            "shortcut": ["ctrl","shift","o"]
+            "type": "submenu",
+            "code": "ij.plugin.NextImageOpener()",
+            "shortcut": ["ctrl","shift","o"],
+            "children": []
           },
           {
             "title" : "Open Samples",
             "type": "submenu",
             "props": {
-              "path": "http://imagej.nih.gov/ij/images/"
+              "data-path": "http://imagej.nih.gov/ij/images/"
             },
             "children" : [
               {
@@ -58,50 +61,62 @@
                 "type": "submenu",
                 "children": [
                   {
+                    "id"   : "aupbsn40",
                     "title": "AuPbSn 40 (56K)",
                     "code" :"ij.plugin.URLOpener('AuPbSn40.jpg')"
                   },
                   {
+                    "id"   :"bat_cochlea_volume",
                     "title":"Bat Cochlea Volume (19K)",
                     "code" :"ij.plugin.URLOpener('bat-cochlea-volume.zip')"
                   },
                   {
+                    "id"   :"bat_cochlea_renderings",
                     "title":"Bat Cochlea Renderings (449K)",
                     "code" :"ij.plugin.URLOpener('bat-cochlea-renderings.zip')"
                   },
                   {
+                    "id"   :"blobs",
                     "title":"Blobs (25K)[B]",
                     "code" :"ij.plugin.URLOpener('blobs.gif')"
                   },
                   {
+                    "id"   :"boats",
                     "title":"Boats (356K)",
                     "code" :"ij.plugin.URLOpener('boats.gif')"
                   },
                   {
+                    "id"   :"bridge",
                     "title":"Bridge (174K)",
                     "code" :"ij.plugin.URLOpener('bridge.gif')"
                   },
                   {
+                    "id"   :"cardio",
                     "title":"Cardio (768K, RGB DICOM)",
                     "code" :"ij.plugin.URLOpener('cardio.dcm.zip')"
                   },
                   {
+                    "id"   :"cell_colony",
                     "title":"Cell Colony (31K)",
                     "code" :"ij.plugin.URLOpener('Cell_Colony.jpg')"
                   },
                   {
+                    "id"   :"clown",
                     "title":"Clown (14K)",
                     "code" :"ij.plugin.URLOpener('clown.jpg')"
                   },
                   {
+                    "id"   :"confocal_series",
                     "title":"Confocal Series (2.2MB)",
                     "code" :"ij.plugin.URLOpener('confocal-series.zip')"
                   },
                   {
+                    "id"   :"ct_dcm",
                     "title":"CT (420K, 16-bit DICOM)",
                     "code" :"ij.plugin.URLOpener('ct.dcm.zip')"
                   },
                   {
+                    "id"   :"dot_blot",
                     "title":"Dot Blot (7K)",
                     "code" :"ij.plugin.URLOpener('Dot_Blot.jpg')"
                   }
@@ -987,7 +1002,14 @@
             "title": "Lookup Tables",
             "type": "submenu",
             "children":[
-
+              {
+                "title": "Invert LUT",
+                "code": "ij.plugin.LutLoader(\"invert\")"
+              },
+              {
+                "title": "Apply LUT",
+                "code": "ij.plugin.filter.LutApplier()"
+              }
             ]
           }
         ]
@@ -1626,19 +1648,19 @@
             "type" : "top_menu",
             "children": [
               {
-                "title": "ImageJ Website...",
-                "code": "ij.plugin.BrowserLauncher",
-                "shortcut": 0
+                "title": "JIM Website...",
+                "type": "link",
+                "href": "https://crazybiocomputing.github.io/tijapi/index.html"
               },
               {
-                "title": "ImageJ News...",
-                "code": "ij.plugin.BrowserLauncher(\"{{IJ.URL}}/notes.html\")",
-                "shortcut": 0
+                "title": "JIM News...",
+                "type": "link",
+                "href": "https://crazybiocomputing.github.io/tijapi/index.html"
               },
               {
                 "title": "Documentation...",
-                "code": "ij.plugin.BrowserLauncher(\"{{IJ.URL}}/docs\")",
-                "shortcut": 0
+                "type": "link",
+                "href": "https://github.com/crazybiocomputing/tijapi/wiki"
               },
               {
                 "title": "Installation...",
@@ -1658,8 +1680,8 @@
               },
               {
                 "title": "Dev. Resources...",
-                "code": "ij.plugin.BrowserLauncher(\"{{IJ.URL}}/developer/index.html\")",
-                "shortcut": 0
+                "type": "link",
+                "href": "https://crazybiocomputing.github.io/tijapi/doc/index.html"
               },
               {
                 "title": "Plugins...",
@@ -1667,7 +1689,7 @@
                 "shortcut": 0
               },
               {
-                "title": "Macros...",
+                "title": "JS Scripts...",
                 "code": "ij.plugin.BrowserLauncher(\"{{IJ.URL}}/macros/\")",
                 "shortcut": 0
               },
@@ -1683,7 +1705,7 @@
                 "comment": "this is a separator"
               },
               {
-                "title": "Update ImageJ...",
+                "title": "Update JIM...",
                 "code": "ij.plugin.ImageJ_Updater",
                 "shortcut": 0
               },
@@ -1702,9 +1724,9 @@
                 "title": "About Plugins"
               },
               {
-                "title": "About ImageJ...",
-                "code": "ij.plugin.AboutBox()",
-                "shortcut": 0
+                "id"   :"about",
+                "title": "About JIM...",
+                "code" : "ij.plugin.AboutBox()"
               }
             ]
           }

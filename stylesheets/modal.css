@@ -1,0 +1,145 @@
+/**
+ * http://www.felipefialho.com/css-components/#component-modal
+ */
+
+@media (max-width:$screen-xs-max){}
+
+@media (min-width:$screen-sm){}
+
+@media (min-width:$screen-sm){}
+
+
+
+.alert .btn-primary {
+    border: solid 1px #000;
+    border-radius: 5px;
+    background-color: #444;
+    color:#fff;
+    cursor:pointer;
+    margin: 12px;
+    padding: 5px 15px 5px 15px;
+    line-height: 40px;
+    text-decoration:none;
+}
+
+.alert .btn-primary:hover {
+    background-color: #7d7d7d;
+}
+.alert .btn-close {
+    cursor:pointer;
+    float: right;
+}
+
+.modal .btn-close:hover,.modal .btn-close:focus {
+    color:#999;
+}
+
+.modal-wrap:before{
+    content:'';
+    display:none;
+    background:rgba(0,0,0,0.6);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:101
+}
+
+.modal-overlay{
+    display:none;
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:102
+}
+
+.modal-open:checked ~ .modal-wrap:before,.modal-open:checked ~ .modal-wrap .modal-overlay{
+    display:block
+}
+
+.modal-open:checked ~ .modal-wrap .modal-dialog{
+    transform:translate(-50%,-50%);
+    position:fixed;top:40%
+}
+
+.modal-dialog{
+    background:#fefefe;
+    border:#555 solid 1px;
+    border-radius:5px;
+    position:fixed;
+    left:50%;
+    top:-100%;
+    padding: 8px 8px 8px 8px;
+    transform:translate(-50%,-150%);
+    transition:transform 400ms ease-in-out;
+    max-width:600px;
+    z-index:103
+}
+
+.modal-body{
+    font-size: 1.0em;
+    line-height: 25px;
+}
+
+.modal-body label, .modal-body input, .modal-body select {
+    margin-bottom:5px;
+}
+.modal-body p{
+    margin:0;
+}
+
+.modal-body label {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+}​
+
+.modal-body fieldset {
+  display: inline-block;
+  margin-top:10px;
+}
+
+.modal-body table{
+    text-align: center;
+    border-spacing: 5px;
+}
+
+.modal-body footer{
+    float: right;
+    background-color: inherit;
+    border-spacing: 5px;
+    margin-top: 20px;
+}
+
+.modal-header,.modal-footer{
+    background-color: #444;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+
+    border-bottom: 1px solid #e7e7e7;
+
+    padding:8px 8px
+}
+
+.modal-header{
+    /* border-bottom:#eaeaea solid 1px; */
+    background-image: url("../images/default-background.jpg");
+    border-radius: 5px 5px 0 0;
+
+}
+
+.modal-header h2{
+    font-size:2rem;
+    margin:0
+}
+
+.modal-footer{
+    border-top:#eaeaea solid 1px;
+    text-align:right;
+    border-radius: 0 0 5px 5px ;
+
+}

@@ -366,14 +366,14 @@ nav li li li {
  *********************************************/
 
 
-.mwModal .modal-dialog {
+.jimModal .modal-dialog {
   max-width: 600px;
   overflow-y: auto;
   max-height: 500px;
 }
 
 
-.mwModal .btn-primary {
+.jimModal .btn-primary {
     border: solid 1px #000;
     border-radius: 5px;
     background-color: #444;
@@ -385,10 +385,10 @@ nav li li li {
     text-decoration:none;
 }
 
-.mwModal .btn-primary:hover {
+.jimModal .btn-primary:hover {
     background-color: #7d7d7d;
 }
-.mwModal .btn-close {
+.jimModal .btn-close {
     cursor:pointer;
     float: right;
 }

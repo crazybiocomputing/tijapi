@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jim.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/modal.css">
     <title>JIM - JavaScript ImageJ-like</title>
     <script src="javascripts/tijapi.js"></script>
+    <script src="javascripts/jim.js"></script>
   </head>
   <body>
     <header>
@@ -18,7 +20,7 @@
             <ul>
               <li class="submenu"><a href="#">New</a>
                 <ul>
-                  <li><a href="#">Image...</a>
+                  <li id="new_image"><a href="#">Image...</a>
                   </li>
                   <li><a href="#">Hyperstack...</a>
                   </li>
@@ -32,86 +34,11 @@
               </li>
               <li><a href="#">Open...</a>
               </li>
-              <li><a href="#">Open Next</a>
-              </li>
-              <li class="submenu"><a href="#">Open Samples</a>
+              <li class="submenu"><a href="#">Open Next</a>
                 <ul>
-                  <li class="submenu"><a href="#">A-D</a>
-                    <ul>
-                      <li><a href="#">AuPbSn 40 (56K)</a>
-                      </li>
-                      <li><a href="#">Bat Cochlea Volume (19K)</a>
-                      </li>
-                      <li><a href="#">Bat Cochlea Renderings (449K)</a>
-                      </li>
-                      <li><a href="#">Blobs (25K)[B]</a>
-                      </li>
-                      <li><a href="#">Boats (356K)</a>
-                      </li>
-                      <li><a href="#">Bridge (174K)</a>
-                      </li>
-                      <li><a href="#">Cardio (768K, RGB DICOM)</a>
-                      </li>
-                      <li><a href="#">Cell Colony (31K)</a>
-                      </li>
-                      <li><a href="#">Clown (14K)</a>
-                      </li>
-                      <li><a href="#">Confocal Series (2.2MB)</a>
-                      </li>
-                      <li><a href="#">CT (420K, 16-bit DICOM)</a>
-                      </li>
-                      <li><a href="#">Dot Blot (7K)</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="submenu"><a href="#">E-M</a>
-                    <ul>
-                      <li><a href="#">Embryos (42K)</a>
-                      </li>
-                      <li><a href="#">Fluorescent Cells (400K)</a>
-                      </li>
-                      <li><a href="#">Fly Brain (1MB)</a>
-                      </li>
-                      <li><a href="#">Gel (105K)</a>
-                      </li>
-                      <li><a href="#">HeLa Cells (1.3M, 48-bit RGB)</a>
-                      </li>
-                      <li><a href="#">Leaf (36K)</a>
-                      </li>
-                      <li><a href="#">Lena (68K)</a>
-                      </li>
-                      <li><a href="#">Line Graph (21K)</a>
-                      </li>
-                      <li><a href="#">Mitosis (26MB, 5D stack)</a>
-                      </li>
-                      <li><a href="#">MRI Stack (528K)</a>
-                      </li>
-                      <li><a href="#">M51 Galaxy (177K, 16-bits)</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="submenu"><a href="#">N-Z</a>
-                    <ul>
-                      <li><a href="#">Neuron (1.6M, 5 channels)</a>
-                      </li>
-                      <li><a href="#">Nile Bend (1.9M)</a>
-                      </li>
-                      <li><a href="#">Organ of Corti (2.8M, 4D stack)</a>
-                      </li>
-                      <li><a href="#">Particles (75K)</a>
-                      </li>
-                      <li><a href="#">T1 Head (2.4M, 16-bits)</a>
-                      </li>
-                      <li><a href="#">T1 Head Renderings (736K)</a>
-                      </li>
-                      <li><a href="#">TEM Filter (112K)</a>
-                      </li>
-                      <li><a href="#">Tree Rings (48K)</a>
-                      </li>
-                    </ul>
-                  </li>
                 </ul>
               </li>
+              <li data="http://imagej.nih.gov/ij/images/" data-="data-path" class="submenu"></li>
               <li class="separator"><a href="#"></a>
               </li>
               <li class="submenu"><a href="#">Import</a>
@@ -496,6 +423,10 @@
               </li>
               <li class="submenu"><a href="#">Lookup Tables</a>
                 <ul>
+                  <li><a href="#">Invert LUT</a>
+                  </li>
+                  <li><a href="#">Apply LUT</a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -816,11 +747,11 @@
           </li>
           <li class="top_menu"><a href="#">Help</a>
             <ul>
-              <li><a href="#">ImageJ Website...</a>
+              <li class="link"><a href="https://crazybiocomputing.github.io/tijapi/index.html" target="_blank">JIM Website...</a>
               </li>
-              <li><a href="#">ImageJ News...</a>
+              <li class="link"><a href="https://crazybiocomputing.github.io/tijapi/index.html" target="_blank">JIM News...</a>
               </li>
-              <li><a href="#">Documentation...</a>
+              <li class="link"><a href="https://github.com/crazybiocomputing/tijapi/wiki" target="_blank">Documentation...</a>
               </li>
               <li><a href="#">Installation...</a>
               </li>
@@ -828,17 +759,17 @@
               </li>
               <li class="separator"><a href="#"></a>
               </li>
-              <li><a href="#">Dev. Resources...</a>
+              <li class="link"><a href="https://crazybiocomputing.github.io/tijapi/doc/index.html" target="_blank">Dev. Resources...</a>
               </li>
               <li><a href="#">Plugins...</a>
               </li>
-              <li><a href="#">Macros...</a>
+              <li><a href="#">JS Scripts...</a>
               </li>
               <li><a href="#">Macro Functions...</a>
               </li>
               <li class="separator"><a href="#"></a>
               </li>
-              <li><a href="#">Update ImageJ...</a>
+              <li><a href="#">Update JIM...</a>
               </li>
               <li><a href="#">Refresh Menus</a>
               </li>
@@ -846,7 +777,7 @@
               </li>
               <li><a href="#">About Plugins</a>
               </li>
-              <li><a href="#">About ImageJ...</a>
+              <li id="about"><a href="#">About JIM...</a>
               </li>
             </ul>
           </li>
@@ -882,31 +813,7 @@
       <div aria-hidden="true" role="dialog" class="modal-wrap">
         <label for="modal-one" class="modal-overlay"></label>
         <div class="modal-dialog">
-          <div class="modal-header">
-            <label for="modal-one" aria-hidden="true" class="btn-close">&#10060;</label>
-            <h2> </h2>
-          </div>
           <div class="modal-body"></div>
-          <div class="modal-footer">
-            <label for="modal-one" class="btn btn-primary">OK</label>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Alert window-->
-    <section class="alert">
-      <input id="modal-alert" type="checkbox" hidden class="modal-open">
-      <div aria-hidden="true" role="dialog" class="modal-wrap">
-        <label for="modal-alert" class="modal-overlay"></label>
-        <div class="modal-dialog">
-          <div class="modal-header">
-            <label for="modal-alert" aria-hidden="true" class="btn-close">&#10060;</label>
-            <h2> </h2>
-          </div>
-          <div class="modal-body"></div>
-          <div class="modal-footer">
-            <label for="modal-alert" class="btn btn-primary">OK</label>
-          </div>
         </div>
       </div>
     </section>

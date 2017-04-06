@@ -187,23 +187,21 @@ Measurements.ADD_TO_OVERLAY=0x400000;
  */
 Measurements.NaN_EMPTY_CELLS=0x800000;
 
-        
-/** 
- * Maximum number of calibration standard (20) 
+
+/**
+ * Maximum number of calibration standard (20)
  * @const
  * @default
  */
 Measurements.MAX_STANDARDS = 20;
-    
-/** 
- * All measurement options 
+
+/**
+ * All measurement options
  * @const
  * @default
  */
-Measurements.ALL_STATS = 
+Measurements.ALL_STATS =
         Measurements.AREA+Measurements.MEAN+Measurements.STD_DEV+Measurements.MODE+Measurements.MIN_MAX+
-        Measurements.CENTROID+Measurements.CENTER_OF_MASS+Measurements.PERIMETER+RECT+
+        Measurements.CENTROID+Measurements.CENTER_OF_MASS+Measurements.PERIMETER+Measurements.RECT+
         Measurements.ELLIPSE+Measurements.SHAPE_DESCRIPTORS+Measurements.FERET+Measurements.INTEGRATED_DENSITY+
         Measurements.MEDIAN+Measurements.SKEWNESS+Measurements.KURTOSIS+Measurements.AREA_FRACTION;
-
-
