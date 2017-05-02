@@ -97,13 +97,13 @@ nav a.active {
 }
 
 /* Sub Menus */
-nav li li {
-  font-size: 0.8em;
+nav > ul > li > ul > li {
+  font-size: 0.9em;
 }
 
 /* Sub sub Menus */
-nav li li li {
-  font-size: 0.8em;
+nav > ul > li > ul > li > ul > li {
+  font-size: 0.8em; 
 }
 
 	.sticky-container{

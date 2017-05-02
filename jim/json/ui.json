@@ -122,5 +122,43 @@
         "label": "Cancel"
       }
     ]
+  },
+  "math":
+  {
+    "id": "math",
+    "legend":  "Math",
+    "fieldset": [
+      {
+        "type": "tab",
+        "label": "Arithmetic",
+        "children" : [
+          {
+            "type": "select",
+            "label": "Op.",
+            "value": ["Add","Subtract","Multiply","Divide","AND","OR","XOR","Min","Max","Gamma","Set"]
+          },
+          {
+            "type": "input_number",
+            "value": 128
+          },
+          {
+            "type": "checkbox",
+            "label": "Preview"
+          },
+
+        ]
+      },
+      {
+        "type": "tab",
+        "label": "Arithmetic",
+        "children" : [
+          {
+            "type": "select",
+            "label": "Op.",
+            "value": ["Abs","Log","Exp","Square", "SquareRoot","NaN Background","Reciprocal"]
+          }
+        ]
+      }
+    ]
   }
 }
