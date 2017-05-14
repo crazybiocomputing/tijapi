@@ -482,14 +482,17 @@
             "children": [
               {
                 "title": "Select All[a]",
+                "shortcut":["ctrl","a"],
                 "code": "ij.plugin.Selection('all')"
               },
               {
                 "title": "Select None[A]",
+                "shortcut":["ctrl","shift","a"],
                 "code": "ij.plugin.Selection('none')"
               },
               {
                 "title": "Restore Selection[E]",
+                "shortcut":["ctrl","shift","e"],
                 "code": "ij.plugin.Selection('restore')"
               },
               {
@@ -526,7 +529,12 @@
               },
               {
                 "title": "Properties... [y]",
+                "shortcut":["ctrl","y"],
                 "code": "ij.plugin.Selection('properties')"
+              },
+              {
+                "title":"Scale...",
+                "code":"ij.plugin.Selection('scale')"
               },
               {
                 "title": "Rotate...",
@@ -728,6 +736,7 @@
               },
               {
                 "title": "Threshold...[T]",
+                "shortcut": ["crtl","shift","t"],
                 "code": "ij.plugin.frame.ThresholdAdjuster()"
               },
               {
@@ -746,7 +755,25 @@
                 "title": "Line Width... ",
                 "code": "ij.plugin.frame.LineWidthAdjuster()"
               }
-            ]
+             {
+                "title": "Coordinates",
+                "code": "ij.plugin.frame.LineWidthAdjuster()"
+              }
+              {
+                "title": "",
+                "type": "separator",
+                "code": "undefined",
+                "comment": "this is a separator"
+              },
+             {
+                "title": "Auto Threshold...",
+                "code": ""
+              }
+             {
+                "title": "Auto Local Threshold...",
+                "code": ""
+              }
+          ]
           },
           {
             "title": "Show Info...",
@@ -781,6 +808,17 @@
                 "code": "ij.plugin.ChannelArranger()"
               },
               {
+                "title": "Channels Tool...",
+                "shortcut":["ctrl","shift","z"],
+                "code": ""
+              },
+              {
+                "title": "",
+                "type": "separator",
+                "code": "undefined",
+                "comment": "this is a separator"
+              },
+              {
                 "title": "Stack to RGB",
                 "code": "ij.plugin.RGBStackConverter()"
               },
@@ -793,11 +831,16 @@
                 "code": "ij.plugin.filter.LutViewer()"
               },
               {
+                "title": "Display LUT",
+                "code": ""
+              },
+              {
                 "title": "Edit LUT...",
                 "code": "ij.plugin.LUT_Editor()"
               },
               {
                 "title": "Color Picker...[K]",
+                "shortcut":["ctrl","shift","k"],
                 "code": "ij.plugin.frame.ColorPicker()"
               }
             ]
@@ -925,6 +968,10 @@
                     "code": "ij.plugin.GroupedZProjector()"
                   },
                   {
+                    "title": "Set Label...",
+                    "code": ""
+                  },
+                  {
                     "title": "Remove Slice Labels",
                     "code": "ij.plugin.SimpleCommands('remove')"
                   }
@@ -936,6 +983,22 @@
             "title": "Hyperstacks",
             "type": "submenu",
             "children": [
+              {
+                "title": "New Hyperstack...",
+                "code": ""
+              },
+              {
+                "title": "Stack to Hyperstack...",
+                "code": ""
+              },
+              {
+                "title": "Hyperstack To Stack",
+                "code": ""
+              },
+              {
+                "title": "Reduce Dimensionality...",
+                "code": ""
+              },
             ]
           },
           {
@@ -968,13 +1031,92 @@
             "title": "Transform",
             "type": "submenu",
             "children":[
-
+              {
+                "title": "Flip Horizontally",
+                "code": ""
+              },
+              {
+                "title": "Flip Vertically",
+                "code": ""
+              },
+              {
+                "title": "Flip Z",
+                "code": ""
+              },
+              {
+                "title": "Rotate 90° Right",
+                "code": ""
+              },
+              {
+                "title": "Rotate 90° Left",
+                "code": ""
+              },
+              {
+                "title": "Rotate...",
+                "code": ""
+              },
+              {
+                "title": "Translate...",
+                "code": ""
+              },
+              {
+                "title": "Bin...",
+                "code": ""
+              },
+              {
+                "title": "",
+                "type": "separator",
+                "code": "undefined",
+                "comment": "this is a separator"
+              },
+              {
+                "title": "Image To Result",
+                "code": ""
+              },
+              {
+                "title": "Result To Image",
+                "code": ""
+              },
             ]
           },
           {
             "title": "Zoom",
             "type": "submenu",
             "children":[
+              {
+                "title": "In [+]",
+                "code": ""
+              },
+              {
+                "title": "Out [-]",
+                "code": ""
+              },
+              {
+                "title": "Original Scale",
+                "shortcut": ["ctrl","4"],
+                "code": ""
+              },
+              {
+                "title": "View 100%",
+                "shortcut":["ctlr","5"],
+                "code": ""
+              },
+              {
+                "title": "To selection",
+                "code": ""
+              },
+              {
+                "title": "Scale to fit",
+                "code": ""
+              },
+              {
+                "title": "Set...",
+                "code": ""
+              },
+              {
+                "title": "Maximize",
+                "code": ""
+              },
 
             ]
           },
@@ -982,6 +1124,53 @@
             "title": "Overlay",
             "type": "submenu",
             "children":[
+              {
+                "title": "Add Selection...",
+                "shortcut":["ctrl","b"],
+                "code": ""
+              },
+              {
+                "title": "Add Image...",
+                "code": ""
+              },
+              {
+                "title": "Hide Overlay",
+                "code": ""
+              },
+              {
+                "title": "Show Overlay",
+                "code": ""
+              },
+              {
+                "title": "From ROI Manager",
+                "code": ""
+              },
+              {
+                "title": "To ROI Manager",
+                "code": ""
+              },
+              {
+                "title": "Remove Overlay",
+                "code": ""
+              },
+              {
+                "title": "List Elements",
+                "code": ""
+              },
+              {
+                "title": "Flatten",
+                "shortcut":["ctrl","shift","f"],
+                "code": ""
+              },
+              {
+                "title": "Labels...",
+                "code": ""
+              },
+              {
+                "title": "Overlay Options...",
+                "shortcut":["ctrl","shift","y"],
+                "code": ""
+              },
 
             ]
           },
@@ -1001,7 +1190,171 @@
               {
                 "title": "Apply LUT",
                 "code": "ij.plugin.filter.LutApplier()"
-              }
+              },
+              {
+                "title": "",
+                "type": "separator",
+                "comment": "this is a separator"
+              },
+              {
+                "title": "Fire",
+                "code": ""
+              },
+              {
+                "title": "Grays",
+                "code": ""
+              },
+              {
+                "title": "Ice",
+                "code": ""
+              },
+              {
+                "title": "Spectrum",
+                "code": ""
+              },
+              {
+                "title": "3-3-2 RGB",
+                "code": ""
+              },
+              {
+                "title": "Red",
+                "code": ""
+              },
+              {
+                "title": "Green",
+                "code": ""
+              },
+              {
+                "title": "Blue",
+                "code": ""
+              },
+              {
+                "title": "Cyan",
+                "code": ""
+              },
+              {
+                "title": "Magenta",
+                "code": ""
+              },
+              {
+                "title": "Yellow",
+                "code": ""
+              },
+
+              {
+                "title": "Red/Green",
+                "code": ""
+              },
+              {
+                "title": "",
+                "type": "separator",
+                "comment": "this is a separator"
+              },
+              {
+                "title": "16 Colors",
+                "code": ""
+              },
+              {
+                "title": "5 Ramps",
+                "code": ""
+              },
+              {
+                "title": "6 Shades",
+                "code": ""
+              },
+              {
+                "title": "BRGBCMYW",
+                "code": ""
+              },
+              {
+                "title": "Blue Orange icb",
+                "code": ""
+              },
+              {
+                "title": "Cool",
+                "code": ""
+              },
+              {
+                "title": "Cyan Hot",
+                "code": ""
+              },
+              {
+                "title": "Edges",
+                "code": ""
+              },
+              {
+                "title": "Gem",
+                "code": ""
+              },
+              {
+                "title": "Glasbey",
+                "code": ""
+              },
+              {
+                "title": "Green Fire Blue",
+                "code": ""
+              },
+              {
+                "title": "HiLo",
+                "code": ""
+              },
+              {
+                "title": "ICA",
+                "code": ""
+              },
+              {
+                "title": "ICA2",
+                "code": ""
+              },
+              {
+                "title": "ICA3",
+                "code": ""
+              },
+              {
+                "title": "Jet",
+                "code": ""
+              },
+              {
+                "title": "Magenta Hot",
+                "code": ""
+              },
+              {
+                "title": "Orange Hot",
+                "code": ""
+              },
+              {
+                "title": "Phase",
+                "code": ""
+              },
+              {
+                "title": "Red Hot",
+                "code": ""
+              },
+              {
+                "title": "Royal",
+                "code": ""
+              },
+              {
+                "title": "Sepia",
+                "code": ""
+              },
+              {
+                "title": "Smart",
+                "code": ""
+              },
+              {
+                "title": "Thal",
+                "code": ""
+              },
+              {
+                "title": "Thallium",
+                "code": ""
+              },
+              {
+                "title": "Union Jack",
+                "code": ""
+              },
+
             ]
           }
         ]
@@ -1472,7 +1825,26 @@
             "comment": "this is a separator"
           },
           {
-            "title": "Batch"
+            "title": "Batch",
+			"type": "submenu",
+			"children": [
+              {
+                "title": "Measure...",
+                "code": ""
+              },
+              {
+                "title": "Convert...",
+                "code": ""
+              },
+              {
+                "title": "Macro...",
+                "code": ""
+              },
+              {
+                "title": "Virtual Stack...",
+                "code": ""
+              },
+		  ]
           },
           {
             "title": "Image Calculator...",
@@ -1564,13 +1936,79 @@
             "title": "Gels",
             "type": "submenu",
             "children": [
-
+              {
+                "title": "Select First Lane",
+				"shortcut":["ctrl","1"],
+                "code": ""
+              },
+              {
+                "title": "Select Next Lane",
+				"shortcut": ["ctrl","2"],
+                "code": ""
+              },
+              {
+                "title": "Plot Lane",
+				"shortcut": ["ctrl","3"],
+                "code": ""
+              },
+              {
+                "title": "Re-plot Lanes",
+                "code": ""
+              },
+              {
+                "title": "Reset",
+                "code": ""
+              },
+              {
+                "title": "Label Peaks",
+                "code": ""
+              },
+              {
+                "title": "Gel Analyzer Options...",
+                "code": ""
+              },
             ]
           },
           {
             "title": "Tools",
             "type": "submenu",
             "children": [
+              {
+                "title": "Save XY Coordinates...",
+                "code": ""
+              },
+              {
+                "title": "Fractal Box Count...",
+                "code": ""
+              },
+              {
+                "title": "Analyze Line Graph",
+                "code": ""
+              },
+              {
+                "title": "Curve Fitting...",
+                "code": ""
+              },
+              {
+                "title": "ROI Manager...",
+                "code": ""
+              },
+              {
+                "title": "Scale Bar...",
+                "code": ""
+              },
+              {
+                "title": "Calibration Bar...",
+                "code": ""
+              },
+              {
+                "title": "Synchronize Windows",
+                "code": ""
+              },
+              {
+                "title": "Grid...",
+                "code": ""
+              },
 
             ]
           }
@@ -1584,17 +2022,174 @@
             "title": "Macros",
             "type": "submenu",
             "children": [
+              {
+                "title": "Install...",
+                "code": ""
+              },
+              {
+                "title": "Run...",
+                "code": ""
+              },
+              {
+                "title": "Edit...",
+                "code": ""
+              },
+              {
+                "title": "Starup Macros...",
+                "code": ""
+              },
+              {
+                "title": "Records...",
+                "code": ""
+              },
+              {
+                "title": "",
+                "type": "separator"
+              },
+              {
+                "title": "About Startup Macros....",
+                "code": ""
+              },
+              {
+                "title": "Save as Jpeg [j]",
+                "code": ""
+              },
 
             ]
           },
           {
-            "title": "Shortcuts"
+            "title": "Shortcuts",
+            "type": "submenu",
+            "children": [
+              {
+                "title": "Add Shortcut...",
+                "code": ""
+              },
+              {
+                "title": "Add Shortcut by Name...",
+                "code": ""
+              },
+              {
+                "title": "Remove Shortcut...",
+                "code": ""
+              },
+              {
+                "title": "List Shortcuts",
+                "code": ""
+              },
+              {
+                "title": "List Commands",
+                "code": ""
+              },
+            ]
+
           },
           {
-            "title": "Utilities"
+            "title": "Utilities",
+            "type": "submenu",
+            "children": [
+              {
+                "title": "Control Panel...",
+				"shortcut":["ctrl","shift","U"],
+                "code": ""
+              },
+              {
+                "title": "Find commands...",
+				"shortcut":["ctrl","l"],
+                "code": ""
+              },
+              {
+                "title": "Search...",
+                "code": ""
+              },
+              {
+                "title": "Monitor Events...",
+                "code": ""
+              },
+              {
+                "title": "Monitor Memory...",
+                "code": ""
+              },
+              {
+                "title": "",
+                "type": "separator"
+              },
+              {
+                "title": "Capture Screen",
+				"shortcut":["ctrl","shift","g"],
+                "code": ""
+              },
+              {
+                "title": "Capture Delayed",
+                "code": ""
+              },
+              {
+                "title": "Capture Image",
+                "code": ""
+              },
+              {
+                "title": "",
+                "type": "separator"
+              },
+              {
+                "title": "ImageJ Properties",
+                "code": ""
+              },
+              {
+                "title": "Threads",
+                "code": ""
+              },
+              {
+                "title": "Benchmark",
+                "code": ""
+              },
+              {
+                "title": "Reset...",
+                "code": ""
+              },
+            ]
           },
           {
-            "title": "New_"
+            "title": "New_",
+            "type": "submenu",
+            "children": [
+              {
+                "title": "Macro",
+                "code": ""
+              },
+              {
+                "title": "Macro Tool",
+                "code": ""
+              },
+              {
+                "title": "JavaScript",
+                "code": ""
+              },
+              {
+                "title": "Plugin",
+                "code": ""
+              },
+              {
+                "title": "Plugin Filter",
+                "code": ""
+              },
+              {
+                "title": "Plugin Frame",
+                "code": ""
+              },
+              {
+                "title": "Plugin Tool",
+                "code": ""
+              },
+              {
+                "title": "Text Windows...",
+                "code": ""
+              },
+              {
+                "title": "Table...",
+                "code": ""
+              },
+            ]
           },
           {
             "title": "Compile and Run...",
