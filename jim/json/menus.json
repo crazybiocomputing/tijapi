@@ -819,7 +819,7 @@
               },
               {
                 "title": "Display LUT",
-                "code": "undefined"
+                "code": "ij.plugin.SimpleCommands(\"display\")"
               },
               {
                 "title": "Edit LUT...",
@@ -956,7 +956,7 @@
                   },
                   {
                     "title": "Set Label...",
-                    "code": "undefined"
+                    "code": "ij.plugin.SimpleCommands(\"set\")"
                   },
                   {
                     "title": "Remove Slice Labels",
@@ -1048,7 +1048,7 @@
               },
               {
                 "title": "Bin...",
-                "code": "undefined"
+                "code": "ij.plugin.Binner"
               },
               {
                 "title": "",
@@ -1058,11 +1058,11 @@
               },
               {
                 "title": "Image To Result",
-                "code": "undefined"
+                "code": "ij.plugin.SimpleCommands(\"itor\")"
               },
               {
                 "title": "Result To Image",
-                "code": "undefined"
+                "code": "ij.plugin.SimpleCommands(\"rtoi\")"
               }
             ]
           },
@@ -1094,7 +1094,7 @@
               },
               {
                 "title": "Scale to fit",
-                "code": "undefined"
+                "code": "ij.plugin.Zoom(\"scale\")"
               },
               {
                 "title": "Set...",
@@ -1141,7 +1141,7 @@
               },
               {
                 "title": "List Elements",
-                "code": "undefined"
+                "code": "ij.plugin.OverlayCommands(\"list\")"
               },
               {
                 "title": "Flatten",
@@ -1150,12 +1150,12 @@
               },
               {
                 "title": "Labels...",
-                "code": "undefined"
+                "code": "ij.plugin.OverlayLabels"
               },
               {
                 "title": "Overlay Options...",
                 "shortcut":["ctrl","shift","y"],
-                "code": "undefined"
+                "code": "ij.plugin.OverlayCommands(\"options\")"
               }
             ]
           },
@@ -1987,11 +1987,11 @@
               },
               {
                 "title": "Synchronize Windows",
-                "code": "undefined"
+                "code": "ij.plugin.frame.SyncWindows"
               },
               {
                 "title": "Grid...",
-                "code": "undefined"
+                "code": "ij.plugin.Grid"
               }
             ]
           }
@@ -2031,7 +2031,7 @@
               },
               {
                 "title": "About Startup Macros....",
-                "code": "undefined"
+                "code": "ij.plugin.Commands(\"startup\")"
               },
               {
                 "title": "Save as Jpeg [j]",
@@ -2049,7 +2049,7 @@
               },
               {
                 "title": "Add Shortcut by Name...",
-                "code": "undefined"
+                "code": "ij.plugin.Hotkeys(\"install2\")"
               },
               {
                 "title": "Remove Shortcut...",
@@ -2078,15 +2078,15 @@
               {
                 "title": "Find commands...",
 				"shortcut":["ctrl","l"],
-                "code": "undefined"
+                "code": "ij.plugin.CommandFinder"
               },
               {
                 "title": "Search...",
-                "code": "undefined"
+                "code": "ij.plugin.SimpleCommands(\"search\")"
               },
               {
                 "title": "Monitor Events...",
-                "code": "undefined"
+                "code": "ij.plugin.EventListener"
               },
               {
                 "title": "Monitor Memory...",
@@ -2099,15 +2099,15 @@
               {
                 "title": "Capture Screen",
 				"shortcut":["ctrl","shift","g"],
-                "code": "undefined"
+                "code": "ij.plugin.ScreenGrabber"
               },
               {
                 "title": "Capture Delayed",
-                "code": "undefined"
+                "code": "ij.plugin.ScreenGrabber(\"delay\")"
               },
               {
                 "title": "Capture Image",
-                "code": "undefined"
+                "code": "ij.plugin.ScreenGrabber(\"image\")"
               },
               {
                 "title": "",
@@ -2141,7 +2141,7 @@
               },
               {
                 "title": "Macro Tool",
-                "code": "undefined"
+                "code": "ij.plugin.NewPlugin(\"macro-tool\")"
               },
               {
                 "title": "JavaScript",
@@ -2161,7 +2161,7 @@
               },
               {
                 "title": "Plugin Tool",
-                "code": "undefined"
+                "code": "ij.plugin.NewPlugin(\"plugin-tool\")"
               },
               {
                 "title": "Text Windows...",
