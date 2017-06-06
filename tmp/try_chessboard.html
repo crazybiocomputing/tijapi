@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">
+<title>Test ChessBoard</title>
+
+<script type="text/javascript">
+
+
+  function ChessBoard() {
+      this.html = this.createUI();
+      this.canvas = document.getElementById('canvas');
+      // Get WEBLG 2 context
+
+  }
+
+  ChessBoard.prototype.createUI = function() {
+    return  `<fieldset>
+      <legend>ChessBoard</legend>
+      <label for="chess_type">Type:</label>
+      <select id="chess_type">
+        <option value="8-bit" selected>8-bit</option>
+        <option value="16-bit" >16-bit</option>
+        <option value="32-bit">32-bit</option>
+        <option value="RGB">RGB</option>
+      </select><br>
+      <label for="chess_size">Width:</label><input id="chess_size" type="text" value="128" size="6"> pixels <br>
+      <button id="chess_ok">Apply</button><button id="chess_cancel">Cancel</button>
+      </fieldset>`;
+
+  }
+
+  ChessBoard.prototype.showUI = function() {
+    let popup = document.getElementById('popup');
+    popup.innerHTML = this.html;
+    // Add events on button `Apply` and `Cancel`
+    // Save this...
+    const that = this;
+    document.getElementById('chess_ok').addEventListener("click", clicked,false);
+    document.getElementById('chess_cancel').addEventListener("click", cancel_op,false);
+
+    function clicked() {
+      console.log('clicked');
+      //1- Read all parameters of popup: size, bpp, etc.
+      console.log(popup);
+      for (const el of popup.children[0].children) {
+        if (el.id !== '') {
+          console.log(el.tagName + ' ' + el.id + ' ' + el.value);
+        }
+
+      }
+      //2- Pre-process webgl stuff
+      that.preprocess(that.canvas);
+
+      //3- Compute
+      that.compute(that.canvas);
+
+      //4- Post-process
+      that.postprocess(that.canvas);
+    }
+
+    function cancel_op() {
+      alert('Bye!');
+    }
+  }
+
+
+  ChessBoard.prototype.preprocess = function(canvas) {
+    console.log('<p>preprocess... init webgl, uniforms, texture, etc.</p>');
+  }
+
+  ChessBoard.prototype.compute = function(canvas) {
+
+
+  }
+
+  ChessBoard.prototype.postprocess = function(canvas) {
+
+
+  }
+
+  ChessBoard.prototype.render = function(canvas) {
+
+
+  }
+
+
+</script>
+</head>
+<body>
+  <canvas id="canvas">
+  </canvas>
+  <div id="popup">
+  </popup>
+
+  <script type="text/javascript">
+    var chess = new ChessBoard();
+    chess.showUI();
+  </script>
+</body>
+</html>

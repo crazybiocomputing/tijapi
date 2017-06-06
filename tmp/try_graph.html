@@ -76,25 +76,82 @@ function createModal(ui) {
 
 body, button, input, select {
 font-family: 'Arimo', monospace;
+font-size: 0.8em;
 }
 
 label {
-    margin: 10px;
+    margin: 4px 0px 0px 0px;
 }
 section {
-  width: 400px;
-
+  position:absolute;
+  width: 150px;
+  background-color: #787878;
+  opacity: 0.8; /* rgba(); */
+  border-radius: 10px;
+  padding-bottom: 4px;
+  border: 1px solid;
+  box-shadow: 5px 5px 5px gray;
+  font-color: #020202;
 }
+
+section:hover {
+  border: 1px solid #fff10a;
+    background-color: #a0a0a0;
+}
+
+header {
+  background-color: #5a5a5a;
+  padding: 5px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+header a::before {
+  content : "▼ ";
+  color: white;
+}
+
 label {
   display: inline-block;
-  width: 80px;
+  width: 40px;
   text-align: right;
 }​
 input,select {
   display: inline-block;
-
 }
 
+.connectors a {
+  text-decoration: none;
+  color: black;
+}
+.outconnect,.inconnect {
+  display: block;
+  width: 100%;
+  text-align: right;
+  margin: 0px;
+}
+
+.outconnect::after {
+  content: "◖";
+  font-size: 1.5em;
+  color: orange;
+}
+
+.inconnect {
+  text-align: left;
+}
+
+.inconnect::before {
+  content: "◗";
+  font-size: 1.5em;
+  color: yellow;
+}
+
+.preview {
+  background-image: url("./img/background.png");
+  width: 90%;
+  height: calc(150px / 16 * 9);
+  margin: 5px;
+}
 
 /******
  * Tab panel
@@ -182,6 +239,8 @@ input.header {
     padding: 15px;
   }
 }
+
+
 </style>
 
 </head>
@@ -189,11 +248,19 @@ input.header {
 <div id="modal">
 </div>
 
-<section>
-<fieldset>
-<legend>New Image...</legend>
+<br>
+<br>
+<output>
+<section id="new_image" style="top:20px;left: 50px;">
+<header>
+<a>New Image...</a>
+</header>
+<div class="connectors">
+<a href="#" class ="outconnect">Image</a>
+</div>
+<content>
 <label for="text_1">Name:</label>
-<input id = "text_1" type="text" value="Untitled"><br>
+<input id = "text_1" size="8" type="text" value="Untitled"><br>
 <label for="type">Type:</label>
 <select id="type">
   <option value="8-bit" selected>8-bit</option>
@@ -201,7 +268,7 @@ input.header {
   <option value="32-bit">32-bit</option>
   <option value="RGB">RGB</option>
 </select><br>
-<label for="fill_with">Fill with:</label>
+<label for="fill_with">Fill:</label>
 <select id="fill_with">
   <option value="Black" selected>Black</option>
   <option value="White" >White</option>
@@ -210,20 +277,93 @@ input.header {
   <option value="Chessboard">Chessboard</option>
 </select><br>
 <label>Width:</label>
-<input type="text" value="128" size="6"> pixels <br>
+<input type="text" value="128" size="6"> px <br>
 <label>Height:</label>
-<input type="text" value="128" size="6"> pixels<br>
+<input type="text" value="128" size="6"> px<br>
+<!-- 
 <label>Slices:</label>
-<input type="text" value="1" size="6"><br>
-<footer>
-  <button>Cancel</button>
-<label></label><button>OK</button>
-</footer>
-</fieldset>
+<input type="text" value="1" size="6">
+<br>
+-->
+<footer></footer>
+</content>
 </section>
 
+<br>
+<br>
 
-<fieldset id = "tab_panel">
+<section id="render" style="top:20px;left: 750px;">
+<header>
+<a>Render</a>
+</header>
+<div class="connectors">
+</div>
+<content>
+<div class="preview"><canvas></canvas></div>
+</content>
+<div class="connectors">
+<a href="#" class ="inconnect">Image</a>
+</div>
+</section>
+
+<br>
+<br>
+
+<section id="math" style="top:200px;left: 500px;">
+<header>
+<a>Math</a>
+</header>
+<div class="connectors">
+<a href="#" class ="outconnect">Image</a>
+</div>
+<content>
+<label for="op">Op.:</label>
+<select id="op">
+  <option value="Add" selected>Add</option>
+  <option value="Subtract" >Subtract</option>
+  <option value="Multiply">Multiply</option>
+  <option value="Divide">Divide</option>
+  <option value="Min">Min</option>
+  <option value="Max">Max</option>
+</select><br>
+<label for="k">K:</label>
+<input id="K" type="text" value="128" size="6"><br>
+</content>
+<div class="connectors">
+<a href="#" class ="inconnect">Image</a>
+</div>
+</section>
+</output>
+
+
+<section id="color_split" style="top:220px;left: 300px;">
+<header>
+<a>Color Split</a>
+</header>
+<div class="connectors">
+<a href="#" class ="outconnect">Channel #1</a>
+<a href="#" class ="outconnect">Channel #2</a>
+<a href="#" class ="outconnect">Channel #2</a>
+<a href="#" class ="outconnect">Alpha</a>
+</div>
+<content>
+<label for="op">Space:</label>
+<select id="op">
+  <option value="Add" selected>RGBA</option>
+  <option value="Subtract" >HSV</option>
+  <option value="Multiply">YUV</option>
+</select><br>
+<div class="preview"><canvas></canvas></div>
+</content>
+<div class="connectors">
+<a href="#" class ="inconnect">Image</a>
+</div>
+</section>
+</output>
+
+<!--
+
+<div id = "tab_panel">
 <legend>Blob Detection...</legend>
 
   <input id="tab1" class="header" type="radio" name="tabs" checked>
@@ -289,9 +429,9 @@ input.header {
 <button>OK</button>
 
 </footer>
-</fieldset>
-<section>
-</section>
+</div>
+
+-->
 
 <script type="text/javascript">
   createModal(new_image);
