@@ -60,9 +60,29 @@ var new_image =   {
 
 
 function createModal(ui) {
-  var el = document.getElementById('modal');
+  let root = document.getElementById('modal');
 
   // TODO
+  let popup = document.createElement('div');
+  let head = document.createElement('header');
+  // Header
+  head.className = "popup_head";
+  head.innerHTML = ui.legend;
+  popup.appendChild(head);
+  
+  // Content
+  let content = document.createElement('content');
+  for (const el of ui.fieldset) {
+    console.log(el);
+    // TODO
+  }
+  
+  popup.appendChild(content);
+  
+  // Footer
+  popup.appendChild(document.createElement('footer'));
+  root.appendChild(popup);
+  console.log(gui);
   console.log(JSON.stringify(ui));
 }
 
@@ -96,7 +116,22 @@ input,select {
 }
 
 
+
 /******
+ * Popup panel
+ ******/
+ 
+ #modal {
+   width: 200px;
+ }
+ 
+ #modal header {
+    background-color: #fe0000;
+    border-radius: 10px;
+    color: white;
+ }
+ 
+ /******
  * Tab panel
  ******/
 
@@ -290,7 +325,6 @@ input.header {
 
 </footer>
 </fieldset>
-<section>
 </section>
 
 <script type="text/javascript">
