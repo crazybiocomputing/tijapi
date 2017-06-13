@@ -6,81 +6,215 @@
 
 <script type="text/javascript">
 
+/**
+ * JWindow
+ */
+  function JWindow(params) {
+    this.ID = -1; // Set by the window manager
+    this.title = params.title || 'Untitled';
+    this.width = params.width || 128;
+    this.vpheight = this.height;
+    this.vpwidth = this.width;
+    this.height = params.height || 128;
+    this.type = params.type || '8-bit';
+    this.bbp = 8;
 
-  function ChessBoard() {
-      this.html = this.createUI();
-      this.canvas = document.getElementById('canvas');
-      // Get WEBLG 2 context
+    // Graph of JNodes keeping track of the history.
+    // Each node/command has a unique key
+    // Connectors are linked by arrows defined by indices.
+    // Index = nodeID << 9 + 2^index_array.
+    // 15 14 13 12 11 10 09 08 07 06 05 04 03 02 01 00
+    //  n  n  n  n  n  n  n  n  i  i  i  i  o  o  o  o
+    this.graph = {
+      parent : null,
+      type: "ChessBoard",
+      params : {},
+      children : [
+        {type: 'Render'}
+      ],
+      arrows: [{tail: 1,head: 1*512 + 16}]
+    };
 
+
+    this.metadata = {
+      'comment': 'created by tijapi'
+    }
+    // Try to get HW Acceleration
+    this.useGPU = false;
+    this.canvas = document.createElement('canvas');
+
+    // Get WEBLG 2 context
+    this.context = this.canvas.getContext("webgl2");
+    // no webgl2 for you!
+    this.useGPU = (!gl) ? false : true;
   }
 
-  ChessBoard.prototype.createUI = function() {
-    return  `<fieldset>
+
+ /**
+  * WindowManager
+  */
+function WindowManager() {
+  // TODO
+  this.ID = 0;
+  /**
+   * Windows Set
+   */
+  this.windows = [];
+  this.ui = {};
+  this.processors = {};
+}
+
+WindowManager.prototype.createWindow = function(params) {
+  //TODO: return the current active image/window
+  this.windows.push(new JWindow(params));
+}
+WindowManager.prototype.getImage = function() {
+  //TODO: return the current active image/window
+}
+
+  WindowManager.prototype.addCommand = function(obj) {
+  function createNodeUI(ui) {
+    // TODO
+  }
+
+  function createUI(ui) {
+    return `<fieldset>
       <legend>ChessBoard</legend>
       <label for="chess_type">Type:</label>
       <select id="chess_type">
-        <option value="8-bit" selected>8-bit</option>
-        <option value="16-bit" >16-bit</option>
+        <option value="8-bit" >8-bit</option>
+        <option value="16-bit" selected>16-bit</option>
         <option value="32-bit">32-bit</option>
         <option value="RGB">RGB</option>
       </select><br>
-      <label for="chess_size">Width:</label><input id="chess_size" type="text" value="128" size="6"> pixels <br>
-      <button id="chess_ok">Apply</button><button id="chess_cancel">Cancel</button>
+      <label for="chess_size">Width:</label><input id="chess_size" type="text" value="256" size="6"> pixels <br>
+      <button id="popup_ok">Apply</button><button id="popup_cancel">Cancel</button>
       </fieldset>`;
+  }
+
+  // Main
+  this.processors[obj.id] = this.processors[obj.id] || obj;
+  this.ui[obj.id] = this.ui[obj.id] || createUI(obj.ui);
+
+}
+
+WindowManager.prototype.add = function(obj,func) {
+  // TODO
+}
+
+WindowManager.prototype.act = function(obj) {
+  // TODO
+  console.log('ACTION!!! ' + obj.role +'::'+obj.cmd + ' ' + JSON.stringify(obj.params) );
+  console.log('preprocess ???');
+  this.processors[obj.cmd].preprocess(obj.params);
+  this.processors[obj.role].compute();
+  this.processors[obj.role].postprocess();
+  console.log('compute');
+  console.log('postprocess');
+  console.log('reply???');
+
+}
+
+WindowManager.prototype.getUI = function(id) {
+  return this.ui[id];
+}
+
+WindowManager.showUI = function(ui_id) {
+  return this.ui[ui_id];
+}
+
+WindowManager.setUI = function(ui) {
+  // Private function
+  function createUI(ui) {
+    // TODO
+    return html;
+  }
+
+  // Main
+  if (this.ui[ui.id] === undefined) {
+    this.ui[ui.id] = createUI(ui);
+  }
+}
+
+WindowManager.createNodeUI = function() {
+  return html;
+}
+
+/**
+ * ChessBoard or New_Image
+ */
+  // a JWindow
+  function ChessBoard() {
+      this.id = 'chessboard';
+
+      // Graphical User Interface
+      this.ui = {
+        id : 'chessboard',
+        legend   : 'New ChessBoard...',
+        inputs   : [],
+        outputs  : [{type: 'Image', id: 'i', label: 'Image'}],
+        fieldset : [
+          {
+            "label": "Name", "type": "input_text", "value": "Untitled"
+          },
+          {
+            "label": "Type","type": "select","options": ["8-bit","16-bit","32-bit","RGB"]
+          },
+          {
+            "label": "Fill","type": "select","options": ["Black","White", "Ramp", "Random","Chessboard"]
+          },
+          {
+            "label": "Width","type": "input_number","value": 128,"suffix": "px"
+          },
+          {
+            "label": "Height","type": "input_number","value": 128,"suffix": "px"
+          },
+          {
+            "label": "Slices","type": "input_number","value": 1
+          }
+        ]
+      };
 
   }
 
-  ChessBoard.prototype.showUI = function() {
-    let popup = document.getElementById('popup');
-    popup.innerHTML = this.html;
-    // Add events on button `Apply` and `Cancel`
-    // Save this...
-    const that = this;
-    document.getElementById('chess_ok').addEventListener("click", clicked,false);
-    document.getElementById('chess_cancel').addEventListener("click", cancel_op,false);
+  ChessBoard.prototype.preprocess = function(params) {
+    // Create Render window
+    this.img = wm.createWindow({title: 'ChessBoard', width: params.chess_size, height: params.chess_size, type: params.chess_type});
+    if (this.img.useGPU) {
+      // Create Shader or get it
+      // The shader is already compiled...
+      this.gpu = wm.shaders[this.id] || new GPUProcessor('','');
 
-    function clicked() {
-      console.log('clicked');
-      //1- Read all parameters of popup: size, bpp, etc.
-      console.log(popup);
-      for (const el of popup.children[0].children) {
-        if (el.id !== '') {
-          console.log(el.tagName + ' ' + el.id + ' ' + el.value);
-        }
-
-      }
-      //2- Pre-process webgl stuff
-      that.preprocess(that.canvas);
-
-      //3- Compute
-      that.compute(that.canvas);
-
-      //4- Post-process
-      that.postprocess(that.canvas);
+      // Create Texture, etc.
     }
 
-    function cancel_op() {
-      alert('Bye!');
-    }
-  }
-
-
-  ChessBoard.prototype.preprocess = function(canvas) {
     console.log('<p>preprocess... init webgl, uniforms, texture, etc.</p>');
   }
 
-  ChessBoard.prototype.compute = function(canvas) {
+  ChessBoard.prototype.compute = function() {
+    if (this.img.useGPU) {
 
+    }
+    else {
+      for (const y=0; y < this.img.height; y++) {
+        for (const x=0; x < this.img.width; x++) {
+          this.img.pixels[x + this.img.width * y] = 0;
+          if ( (x/32 + y/32) % 2 == 0) {
+            pixels[x + this.img.width * y] = 255;
+          }
+        }
+      }
+    }
 
   }
 
-  ChessBoard.prototype.postprocess = function(canvas) {
+  ChessBoard.prototype.postprocess = function() {
+    if (this.img.useGPU) {
 
-
-  }
-
-  ChessBoard.prototype.render = function(canvas) {
-
+    }
+    else {
+      this.img.render();
+    }
 
   }
 
@@ -88,14 +222,71 @@
 </script>
 </head>
 <body>
+  <button id="chessboard" data-role="new_image" data-cmd="chessboard" onclick="trigger">ChessBoard</button>
   <canvas id="canvas">
   </canvas>
-  <div id="popup">
-  </popup>
+  <div id="modal"></div>
+
 
   <script type="text/javascript">
-    var chess = new ChessBoard();
-    chess.showUI();
+
+
+  var wm = new WindowManager();
+
+  // Add Event for menu item 'chessboard'
+  wm.addCommand(new ChessBoard());
+  document.getElementById('chessboard').addEventListener('click', trigger);
+
+    // Microservice 'à la' seneca.js
+    // cpu 8-bit, 16-bit, 32-bit, RGB(A)
+    // gpu 8-bit, 16-bit, 32-bit, RGB(A)
+    wm.add(
+      {role: 'new_image', cmd: 'chessboard', type: 'cpu8'},
+      function (msg,reply) {
+        let processor = msg.processor;
+        processor.cpu(8);
+        processor.compute(msg.params);
+        processor.postprocess();
+        reply(null, {answer: chess});
+      }
+    );
+
+    // Show UI from menu click
+    function trigger(evt) {
+      let popup = document.getElementById('modal');
+      console.log(evt);
+      popup.innerHTML = wm.getUI(evt.target.id);
+      // Add events on button `Apply` and `Cancel`
+      // Save this...
+      const that = this;
+      document.getElementById('popup_ok').addEventListener("click", ok_clicked,false);
+      document.getElementById('popup_cancel').addEventListener("click", cancel_op,false);
+
+
+
+      function ok_clicked() {
+        // Read Params of popup: size, bpp, etc.
+        let content = document.querySelector('#modal fieldset');
+        let ui_params = [];
+        for (const el of content.children) {
+          if (el.id !== '') {
+            ui_params.push({tag: el.tagName, id: el.id, value: el.value});
+          }
+        }
+        // Execute...Invoke...
+        let data = document.getElementById("chessboard").dataset;
+        wm.act({role: data.role, cmd: data.cmd, params: ui_params});
+
+        // Remove popup content
+        document.getElementById('modal').innerHTML = '';
+      }
+
+      function cancel_op() {
+        alert('Bye!');
+        document.getElementById('modal').innerHTML = '';
+      }
+}
+
   </script>
 </body>
 </html>
