@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "untitled-font-3";
+  src:url("fonts/untitled-font-3.eot");
+  src:url("fonts/untitled-font-3.eot?#iefix") format("embedded-opentype"),
+    url("fonts/untitled-font-3.woff") format("woff"),
+    url("fonts/untitled-font-3.ttf") format("truetype"),
+    url("fonts/untitled-font-3.svg#untitled-font-3") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "untitled-font-3" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "untitled-font-3" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-angle:before {
+  content: "\61";
+}
+.icon-arrow:before {
+  content: "\62";
+}
+.icon-brush:before {
+  content: "\63";
+}
+.icon-bucket:before {
+  content: "\64";
+}
+.icon-doublearrow:before {
+  content: "\65";
+}
+.icon-drop:before {
+  content: "\66";
+}
+.icon-font:before {
+  content: "\67";
+}
+.icon-hand:before {
+  content: "\68";
+}
+.icon-line:before {
+  content: "\69";
+}
+.icon-lineround:before {
+  content: "\6a";
+}
+.icon-lineselect:before {
+  content: "\6b";
+}
+.icon-multipoint:before {
+  content: "\6c";
+}
+.icon-oval:before {
+  content: "\6d";
+}
+.icon-ovalhand:before {
+  content: "\6e";
+}
+.icon-ovalhandpaint:before {
+  content: "\6f";
+}
+.icon-point:before {
+  content: "\70";
+}
+.icon-pointer:before {
+  content: "\71";
+}
+.icon-rect:before {
+  content: "\72";
+}
+.icon-rectroundtrans:before {
+  content: "\73";
+}
+.icon-roundline:before {
+  content: "\74";
+}
+.icon-stack:before {
+  content: "\75";
+}
+.icon-starightline:before {
+  content: "\76";
+}
+.icon-wand:before {
+  content: "\77";
+}
+.icon-zoom:before {
+  content: "\78";
+}
+.icon-rectround:before {
+  content: "\79";
+}
+.icon-puzzle-piece:before {
+  content: "\7a";
+}
